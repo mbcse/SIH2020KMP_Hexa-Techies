@@ -29,3 +29,7 @@ important and relevant **Project related information from of pool of data source
 - Mohit Bhat and Avinash Kumar=>Blockchain and Backend
 - Aditiya Singh and K.Manohar=>AI 
 - Chahat Bindra and M.Vineeth=>Frontend
+
+<hr>
+
+<img src="Flow_Diagram.jpg">
