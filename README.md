@@ -31,5 +31,7 @@ important and relevant **Project related information from of pool of data source
 - Chahat Bindra and M.Vineeth=>Frontend
 
 <hr>
+<h1> Flow Diagram of the Project </h1>
+<hr>
 
 <img src="Flow_Diagram.jpg">
