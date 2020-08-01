@@ -1,0 +1,558 @@
+﻿<!DOCTYPE html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <!-- Favicon icon -->
+        <link rel="icon" type="image/png" sizes="16x16" href="/dashboard/assets/images/favicon.png">
+        <title>AAI LICENSING</title>
+        <!-- Custom CSS -->
+        <!-- <link href="/dashboard/assets/libs/chartist/dist/chartist.min.css" rel="stylesheet"> -->
+        <!-- Custom CSS -->
+        <!-- <link href="/dashboard/dist/css/style.min.css" rel="stylesheet"> -->
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    <script src="/blockchain/web3.min.js"></script>
+
+    <script src="/blockchain/web3.min.js"></script>
+    <script src="/blockchain/contract.js"></script>
+    
+    </head>
+    <body>
+
+        	  <!-- Modal -->
+	  <div class="modal fade" id="applicationmodal" tabindex="-1" role="dialog" aria-labelledby="applicationmodal" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <h5 class="modal-title" id="applicationmodal">Notice</h5>
+			  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			  </button>
+			</div>
+			<div class="modal-body">
+				<h5 id="message" >Submitting Application</h5>
+				<div class="container" id="statusBar">
+					<h2 id="headingmessage">Submitting Application</h2>
+					There will be series of Metamask Popup's
+					<p id="proStatus">Starting</p> 
+					<div class="progress">
+					  <div class="progress-bar progress-bar-striped progress-bar-animated" id="progressBar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+						<span id="barStatusValue">0%</span>
+					  </div>
+					</div>
+				  </div>
+			</div>
+			<div class="modal-footer">
+			  <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cancel" style="display: block;">Cancel</button>
+			  <button type="button" class="btn btn-secondary" data-dismiss="modal" style="display: block;" id="close">close</button>
+			  
+			</div>
+		  </div>
+		</div>
+	  </div>
+        <!-- Modal End -->
+
+
+
+
+
+        <h1> <marquee>Aerodrome License Application Form</marquee></h1>
+        <h2>DETAILS OF LICENCEE (as required to be shown on the license)</h2>
+
+
+        <div class="container">               
+<div class="panel-body" >
+
+  
+            
+
+    <form  class="form-horizontal" id="NewApplication" method="post" >
+        
+        <div id="" class="form-group required">
+            <label for="applicantName" class="control-label     requiredField">Applicant Full Name<span class="asteriskField">*</span> </label>
+            <div class="controls ">
+                <input class="form-control" id="applicantName"  maxlength="30" name="username" value="Test1" placeholder="Full Name in Capital Letters" style="margin-bottom: 10px" type="text" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="applicantAddress">Address<span class="asteriskField">*</span></label>
+            <input type="text" class="form-control" id="applicantAddress" name="applicantAddress" value="abcdefghigklmn" placeholder="1234 Main St">
+        </div>
+
+        <div class="form-group">
+            <label for="applicantAddress2">Address 2</label> 
+            <input type="text" class="form-control" id="applicantAddress2" name="applicantAddress2" value="abcdefghijklmn" placeholder="Apartment, studio, or floor">
+        </div>
+
+        <div class="form-row">
+            <div class="form-group ">
+                <label for="applicantCity">City<span class="asteriskField">*</span></label> 
+                <input type="text" class="form-control" value="New Delhi" id="applicantCity" name="applicantCity">
+            </div>
+            <div class="form-group ">
+                <label for="applicantState">State<span class="asteriskField">*</span></label> 
+                <input type="text" class="form-control" value="Delhi" id="applicantState" name="applicantState">
+            </div>
+            <div class="form-group ">
+                <label for="applicantZip">Zip<span class="asteriskField">*</span></label> 
+                <input type="text" class="form-control" value="abcdefghijklmn" id="applicantZip" name="applicantZip">
+            </div>
+        </div>
+        
+        <div class="form-group >
+            <label for="applicantPhone">Phone Number:<span class="asteriskField">*</span></label> 
+            <input type="tel" id="applicantPhone" name="applicantPhone" value="999-000-9999" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>    
+        </div>
+
+        <div id="div_id_email" class="form-group required">
+            <label for="applicantEmail" class="control-label   requiredField"> E-mail<span class="asteriskField">*</span> </label>
+            <div class="controls ">
+                <input class="input-md emailinput form-control" id="applicantEmail" value="abc@gmail.com" name="applicantEmail" placeholder="Your current email address" style="margin-bottom: 10px" type="email" />
+            </div>     
+        </div>
+
+        <div id="div_id_nationality" class="form-group required">
+            <label for="applicantNationality" class="control-label  requiredField">Nationality<span class="asteriskField">*</span> </label>
+            <div class="controls  "> 
+                <input class="input-md   form-control" id="applicantNationality" value="Indian" name="applicantNationality" placeholder="Enter your Nationality" style="margin-bottom: 10px" type="text" />
+            </div>
+        </div>
+
+        <h2>DETAILS OF AERODROME (as required to be shown on the license)</h2>
+        <div id="aerodromeName" class="form-group required">
+            <label for="aerodromeName" class="control-label   requiredField"> Place name by which the aerodrome is to be known in all future references  </label>
+            <div class="controls  ">
+                <input class="input-md   form-control" id="aerodromeName" name="aerodromeName" value="KMP Airport" placeholder="" style="margin-bottom: 10px" type="text" />
+            </div>
+        </div>
+
+        <div id="aerodromeSite" class="form-group required"> 
+            <label for="aerodromeSite" class="control-label  requiredField"> Site of Aerodrome </label>  
+            <div class="controls  "> 
+                <input class="input-md   form-control" id="aerodromeSite" value="Greater noida" name="aerodromeSite" placeholder="" style="margin-bottom: 10px" type="text" />
+            </div>
+        </div>
+
+        <div id="aerodromeState_District" class="form-group required"> 
+            <label for="aerodromeState_District" class="control-label   requiredField"> State / District in which situated  </label>
+            <div class="controls  "> 
+                <input class="input-md   form-control" id="aerodromeState_District" value="UP" name="aerodromeState_District" placeholder="" style="margin-bottom: 10px" type="text" />
+            </div>
+        </div>
+
+        <div id="noOfRunways" class="form-group required"> 
+            <label for="noOfRunways" class="control-label   requiredField"> Number Of Runways   </label>
+            <div class="controls  "> 
+                <input class="input-md   form-control" id="noOfRunways" name="noOfRunways" value="5" placeholder="" style="margin-bottom: 10px" type="text" />
+            </div>
+        </div>
+
+        <div id="runwayLength" class="form-group required"> 
+            <label for="runwayLength" class="control-label  requiredField">Orientation and length of runway (s) (in feet)   </label>
+            <div class="controls    "> 
+                <input class="input-md   form-control" id="runwayLength" name="runwayLength" value="2000" placeholder="in Feet" style="margin-bottom: 10px" type="text" />
+            </div>
+        </div>
+
+
+        <div id="passengerCapacity" class="form-group required"> 
+            <label for="passengerCapacity" class="control-label  requiredField"> Capacity of passenger proposed  </label>
+            <div class="controls    "> 
+                <input class="input-md   form-control" id="passengerCapacity" name="passengerCapacity" value="100000000" placeholder="in Feet" style="margin-bottom: 10px" type="text" />
+            </div>
+        </div>
+
+        
+        <div id="cargoCapacity" class="form-group required"> 
+            <label for="cargoCapacity" class="control-label  requiredField"> Capacity of Cargo proposed  </label>
+            <div class="controls    "> 
+                <input class="input-md   form-control" id="cargoCapacity" name="cargoCapacity" value="100000000" placeholder="in Feet" style="margin-bottom: 10px" type="text" />
+            </div>
+        </div>
+
+        
+        <div id="noOfTaxiways" class="form-group required"> 
+            <label for="noOfTaxiways" class="control-label requiredField">No of TaxiWays </label>
+            <div class="controls    "> 
+                <input class="input-md   form-control" id="noOfTaxiways" name="noOfTaxiways" placeholder="" value="10" style="margin-bottom: 10px" type="text" />
+            </div>
+        </div>
+
+
+        
+        <div id="areaPassengerT" class="form-group required"> 
+            <label for="areaPassengerT" class="control-label  requiredField"> Area of Passenger terminal  </label>
+            <div class="controls    "> 
+                <input class="input-md   form-control" id="areaPassengerT" name="areaPassengerT" placeholder="" value="100000000" style="margin-bottom: 10px" type="text" />
+            </div>
+        </div>
+
+        <div id="areaCargoT" class="form-group required"> 
+            <label for="areaCargoT" class="control-label  requiredField"> Area Of Cargo Terminal </label>
+            <div class="controls    "> 
+                <input class="input-md   form-control" id="areaCargoT" name="areaCargoT" placeholder="" value="100000000" style="margin-bottom: 10px" type="text" />
+            </div>
+        </div>
+
+        <h2>AERODROME ACTIVITIES</h2>
+        
+        <div id="aerodromeCategory" class="form-group required">
+            <label for="aerodromeCategory"  class="control-label  requiredField">State category of licence required as defined in Aircraft Rules 1937? </label>
+            <div class="controls    "  style="margin-bottom: 10px">
+                    <label class="radio-inline"> <input type="radio" name="category" id="aerodromeCategory1" checked value="PUBLIC USE"  style="margin-bottom: 10px">PUBLIC USE</label>
+                    <label class="radio-inline"> <input type="radio" name="category" id="aerodromeCategory2" value="PRIVATE USE"  style="margin-bottom: 10px">PRIVATE USE </label>
+            </div>
+        </div>
+
+        <div id="totalLandArea" class="form-group required"> 
+            <label for="totalLandArea" class="control-label  requiredField"> Total Area of Land </label>
+            <div class="controls    "> 
+                <input class="input-md   form-control" id="totalLandArea" name="totalLandArea" value="100000000" placeholder="" style="margin-bottom: 10px" type="text" />
+            </div>
+        </div>
+
+        <div id="totalLandCost" class="form-group required"> 
+            <label for="totalLandCost" class="control-label  requiredField"> Total Land Cost </label>
+            <div class="controls    "> 
+                <input class="input-md   form-control" id="totalLandCost" name="totalLandCost" value="3000000000" placeholder="" style="margin-bottom: 10px" type="text" />
+            </div>
+        </div>
+     
+        <h2>CONTROL OF THE AERODROME</h2>
+        <div id="onwerAerodrome" class="form-group required">
+            <label for="onwerAerodrome"  class="control-label  requiredField">Are you the owner of the aerodrome site?
+            </label>
+            <div class="controls    "  style="margin-bottom: 10px">
+                    <label class="radio-inline"> <input type="radio" name="onwerAerodrome_1" checked id="onwerAerodrome_1" value="YES"  style="margin-bottom: 10px">YES</label>
+                    <label class="radio-inline"> <input type="radio" name="onwerAerodrome_2" id="onwerAerodrome_2" value="NO"  style="margin-bottom: 10px">NO </label>
+            </div>
+       
+      
+
+       
+        <div id="aerdromeLongitude" class="form-group required"> 
+            <label for="aerodromeLongitude" class="control-label  requiredField"> Longitude of the
+                place in six digits </label> 
+            <div class="controls    "> 
+                <input class="input-md   form-control" id="aerdromeLongitude" value="10:90:12:12" name="aerodromeLongitude" placeholder="" style="margin-bottom: 10px" type="text" />
+        </div>
+        <div id="aerodromeLatitude" class="form-group required"> 
+            <label for="aerodromeLatitude" class="control-label  requiredField">Latitude of the
+                    place in six digits </label> 
+            <div class="controls    "> 
+                <input class="input-md   form-control" id="aerodromeLatitude" value="90:89:67:87" name="aerodromeLatitude" placeholder="" style="margin-bottom: 10px" type="text" />
+            </div>
+        </div>
+
+     
+
+        <h2>AERODROME MANGEMENT PERSONNEL</h2>
+        <h3>Board Member/ Managing Director or person having specific responsibility for safety. </h3>
+        <h4>(To be completed only where the applicant is a company/ corporate/society)</h4> 
+
+        <div id="companyHead" class="form-group required"> 
+            <label for="companyHead" class="control-label   requiredField"> Name  </label> 
+            <div class="controls    "> 
+                <input class="input-md   form-control" id="companyHead" value="xyz1" name="companyHead" placeholder="" style="margin-bottom: 10px" type="text" />
+            </div>
+        </div>   
+
+        <div id="companyHeadStatus" class="form-group required"> 
+            <label for="companyHeadStatus" class="control-label   requiredField"> Status/ Designation   </label> 
+            <div class="controls    "> 
+                <input class="input-md   form-control" id="companyHeadStatus" value="yyy" name="companyHeadStatus" placeholder="" style="margin-bottom: 10px" type="text" />
+            </div>
+        </div> 
+          
+        <div class="form-group   ">
+            <label for="companyHeadPhone">Telephone Number</label> 
+            <input type="tel" id="companyHeadPhone" name="companyHeadPhone" value="999-999-9990" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+        </div>
+
+        <h3>The person in charge of day to day operation of aerodrome. </h3>
+        <div class="form-group required"> 
+            <label for="aerodromeOperationHead" class="control-label   requiredField"> Name  </label> 
+            <div class="controls    "> 
+                <input class="input-md   form-control" id="aerodromeOperationHead" value="zzz" name="aerodromeOperationHead" placeholder="" style="margin-bottom: 10px" type="text" />
+            </div>
+        </div>
+
+        <div class="form-group required"> 
+            <label for="aerodromeOperationHeadStatus" class="control-label   requiredField"> Status/ Designation   </label> 
+            <div class="controls    "> 
+                <input class="input-md   form-control" id="aerodromeOperationHeadStatus" value="yyy" name="aerodromeOperationHeadStatus" placeholder="" style="margin-bottom: 10px" type="text" />
+            </div>
+        </div>
+
+        <div class="form-group   ">
+            <label for="aerodromeOperationHeadPhone">Telephone Number:</label>
+            <input type="tel" id="aerodromeOperationHeadPhone" name="aerodromeOperationHeadPhone" value="999-999-9999" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+        </div>
+
+        <!-- <h3>The person responsible for Aerodrome Safety. If different from above (Please enclose a current Curriculum Vitae [CV]) </h3> -->
+        <div  class="form-group required"> 
+            <label for="aerodromeSafetyHead" class="control-label   requiredField"> Name  </label> 
+            <div class="controls    "> 
+                <input class="input-md   form-control" value="ppp" id="aerodromeSafetyHead" name="aerodromeSafetyHead" placeholder="" style="margin-bottom: 10px" type="text" />
+            </div>
+        </div>    
+        <div  class="form-group required"> 
+            <label for="aerodromeSafetyHeadStatus" class="control-label  requiredField"> Status/ Designation   </label> 
+            <div class="controls    "> 
+                <input class="input-md   form-control" value="kkk" id="aerodromeSafetyHeadStatus" name="aerodromeSafetyHeadStatus" placeholder="" style="margin-bottom: 10px" type="text" />
+            </div>
+        </div>
+
+        <div class="form-group   ">
+            <label for="aerodromeSafetyHeadPhone">Telephone Number:</label>
+            <input type="tel" id="aerodromeSafetyHeadPhone" name="aerodromeSafetyHeadPhone" value="999-999-9999" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+        </div>
+
+        <h3>Provider of the CNS - ATM </h3>
+        <div  class="form-group required"> 
+            <label for="aerodromeAtmProvider" class="control-label   requiredField"> Name  </label> 
+            <div class="controls    "> 
+                <input class="input-md   form-control" id="aerodromeAtmProvider" value="ooo" name="aerodromeAtmProvider" placeholder="" style="margin-bottom: 10px" type="text" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="aerodromeAtmProviderAddress">Address </label> 
+            <input type="text" class="form-control" id="aerodromeAtmProviderAddress"  name="aerodromeAtmProviderAddress" value="avbc" placeholder="">
+        </div>
+
+        <h3>Provider of the MET services </h3>
+        <div  class="form-group required"> 
+            <label for="aerodromeMetProvider" class="control-label   requiredField"> Name  </label> 
+            <div class="controls    "> 
+                <input class="input-md   form-control" id="aerodromeMetProvider"  value="oioio" name="aerodromeMetProvider" placeholder="" style="margin-bottom: 10px" type="text" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="aerodromeMetProviderAddress">Address </label>
+            <input type="text" class="form-control" id="aerodromeMetProviderAddress" name="aerodromeMetProviderAddress" value="abhoi" placeholder="">
+            </div>
+        </div>
+
+        <h3>The person responsible for overseeing the day to day provisions of the Air Traffic Management </h3>    
+        <div  class="form-group required"> 
+            <label for="aerodromeAtmHead" class="control-label   requiredField"> Name  </label> 
+            <div class="controls    "> 
+                <input class="input-md   form-control" id="aerodromeAtmHead" value="kkk" name="aerodromeAtmHead" placeholder="" style="margin-bottom: 10px" type="text" />
+            </div>
+        </div>
+
+        <div  class="form-group required"> 
+            <label for="aerodromeAtmHeadStatus" class="control-label   requiredField"> Status/ Designation   </label> 
+            <div class="controls    "> 
+                <input class="input-md   form-control" id="aerodromeAtmHeadStatus" value="lll" name="aerodromeAtmHeadStatus" placeholder="" style="margin-bottom: 10px" type="text" />
+            </div>
+        </div>
+
+        <div class="form-group   ">
+            <label for="aerodromeAtmHeadPhone">Telephone Number:</label> 
+
+            <input type="tel" id="aerodromeAtmHeadPhone" name="aerodromeAtmHeadPhone" value="999-999-9999" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>  
+        </div>
+
+        <h3>The person responsible for overseeing the day to day provisions of CNS </h3> 
+        <div  class="form-group required"> 
+            <label for="aerodromeCnsHead" class="control-label  requiredField"> Name  </label> 
+            <div class="controls    "> 
+                <input class="input-md   form-control" id="aerodromeCnsHead" value="lllcss" name="aerodromeCnsHead" placeholder="" style="margin-bottom: 10px" type="text" />
+            </div>
+        </div>
+
+        <div  class="form-group required"> 
+            <label for="aerodromeCnsHeadStatus" class="control-label   requiredField"> Status/ Designation   </label> 
+            <div class="controls    "> 
+                <input class="input-md   form-control" id="aerodromeCnsHeadStatus"  value="popop" name="aerodromeCnsHeadStatus" placeholder="" style="margin-bottom: 10px" type="text" />
+            </div>
+        </div>
+
+        <div class="form-group   ">
+            <label for="aerodromeCnsHeadPhone">Telephone Number:</label>
+
+            <input type="tel" id="aerodromeCnsHeadPhone" name="aerodromeCnsHeadPhone" value="999-999-9999"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>  
+        </div>
+
+        <h3>The person responsible for overseeing the day to day provisions of RFF  </h3> 
+        <div class="form-group required"> 
+            <label for="aerodromeRffHead" class="control-label   requiredField"> Name  </label> 
+            <div class="controls    "> 
+                <input class="input-md   form-control" id="aerodromeRffHead" value="lplpl" name="aerodromeRffHead" placeholder="" style="margin-bottom: 10px" type="text" />
+            </div>
+        </div>
+
+        <div class="form-group required"> 
+            <label for="aerodromeRffHeadStatus" class="control-label  requiredField"> Status/ Designation   </label> 
+            <div class="controls    "> 
+                <input class="input-md   form-control" value="lklkl" id="aerodromeRffHeadStatus" name="aerodromeRffHeadStatus" placeholder="" style="margin-bottom: 10px" type="text" />
+            </div>
+        </div>
+
+        <div class="form-group   ">
+            <label for="aerodromeRffHeadPhone">Telephone Number:</label>
+            <input type="tel" id="aerodromeRffHeadPhone" name="aerodromeRffHeadPhone" value="999-099-9999" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>  
+        </div>
+
+        <h3>The person responsible for overseeing the day to day provisions of MET services</h3>
+        <div  class="form-group required"> 
+            <label for="aerodromeMetHead" class="control-label   requiredField"> Name  </label> 
+            <div class="controls    "> 
+                <input class="input-md   form-control" id="aerodromeMetHead" value="vcxcxc" name="aerodromeMetHead" placeholder="" style="margin-bottom: 10px" type="text" />
+            </div>
+        </div>
+
+        <div  class="form-group required"> 
+            <label for="aerodromeMetHeadStatus" class="control-label   requiredField"> Status/ Designation   </label> 
+            <div class="controls    "> 
+                <input class="input-md   form-control" value="lkdsdlkl" id="aerodromeMetHeadStatus" name="aerodromeMetHeadStatus" placeholder="" style="margin-bottom: 10px" type="text" />
+            </div>
+        </div>
+
+        <div class="form-group   ">
+            <label for="aerodromeMetHeadPhone">Telephone Number:</label>
+            <input type="tel" id="aerodromeMetHeadPhone" value="999-099-9999" name="aerodromeMetHeadPhone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>   
+        </div>
+
+    
+
+        <h2>PROJECT DETAILS</h2>
+        <div class="form-group   ">
+            <label for="totalProjectCost">Total Project Cost</label>
+            <input class="input-md   form-control" id="totalProjectCost" value="898989898" name="totalProjectCost" placeholder="" style="margin-bottom: 10px" type="text" />   
+        </div>
+
+
+        <h2>DETAILS OF FEES</h2>
+        <div id="feeDetail" class="form-group required"> 
+            <label for="feeDetail" class="control-label  requiredField">Challan No. for online deposit</label> 
+            <div class="controls    "> 
+                <input class="input-md   form-control" id="feeDetail" value="ABV7867" name="feeDetail" placeholder="" style="margin-bottom: 10px" type="text" />
+            </div>
+        </div>
+
+        <div class="form-group required"> 
+            <label for="feeAmount" class="control-label   requiredField">Amount (Attach a sheet showing the calculation of amount as per runway length)   </label> 
+            <div class="controls    "> 
+                <input class="input-md   form-control" id="feeAmount" value="100000" name="feeAmount" placeholder="" style="margin-bottom: 10px" type="text" />
+            </div>
+        </div>
+
+        <div class="form-group required"> 
+            <label for="feeDetails" class="control-label   requiredField">Date & name of the drawee bank</label> 
+            <div class="controls    "> 
+                <input class="input-md   form-control" id="feeDetails" value="Axis Bank" name="feeDetails" placeholder="" style="margin-bottom: 10px" type="text" />
+            </div>
+        </div>
+
+            
+        <div class="form-group">
+            <div class="controls ">
+                <div id="certify" class="checkbox required">
+                    <label for="certify" class=" requiredField">
+                            <input class="input-ms checkboxinput" id="certify" name="terms" style="margin-bottom: 10px" type="checkbox" />
+                            I hereby certify that the forgoing information is correct in every respect and no relevant information has been withheld. 
+                            <div class="container"> 
+                                <input type="submit" class="btn btn-success" value="Submit">
+                            </div>
+                    </label>
+                </div>         
+            </div>
+        </div> 
+    </form>         
+        
+                <a href="/client/dashboard" class="btn btn-success" value="Go Back">Go BAck</a>
+        
+        <script src="/dashboard/assets/libs/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap tether Core JavaScript -->
+        <script src="/dashboard/assets/libs/popper.js/dist/umd/popper.min.js"></script>
+        <script src="/dashboard/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="/dashboard/dist/js/app-style-switcher.js"></script>
+        <!--Wave Effects -->
+        <script src="/dashboard/dist/js/waves.js"></script>
+        <!--Menu sidebar -->
+        <script src="/dashboard/dist/js/sidebarmenu.js"></script>
+        <!--Custom JavaScript -->
+        <script src="/dashboard/dist/js/custom.js"></script>
+        <!--This page JavaScript -->
+        <!--chartis chart-->
+        <script src="/dashboard/assets/libs/chartist/dist/chartist.min.js"></script>
+        <script src="/dashboard/assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+        <script src="/dashboard/dist/js/pages/dashboards/dashboard1.js"></script>
+        <script src="/jscodes/applicationForm.js"></script>
+
+        <script>
+	var messagediv=document.getElementById('message');
+	var barContainer=document.getElementById('statusBar');
+            barContainer.style.display="none";
+
+            var statusText=document.getElementById('proStatus');
+            var probarDiv=document.getElementById('progressBar');
+            var statusShowValue=document.getElementById('barStatusValue');
+            var statusValue=0;
+
+            var putStatusValue=function(val,text){
+                proStatus.innerHTML=text;
+                statusShowValue.innerHTML=val+"%";
+                probarDiv.style.width=val+"%";  
+            }
+            var progressInterval;
+
+            var updatebar=function(){
+                            if(statusValue>=0 && statusValue<4){
+                            putStatusValue(statusValue, "Connecting To blockchain");
+                            }
+                            else if(statusValue>=4 && statusValue <50){
+                                putStatusValue(statusValue, "Generating Application ID");
+                            } 
+
+                            else if(statusValue>=50 && statusValue <60){
+                                putStatusValue(statusValue, "Transacting Please Approve!");
+							}
+							else if(statusValue>=60 && statusValue <75){
+                                putStatusValue(statusValue, "Updating Ledger...");
+                            }
+
+                            else if(statusValue>=80 && statusValue <=100){
+                                putStatusValue(statusValue,"Confirming...");
+                            }
+                            else{
+                                //putStatusValue(100,"Done! Thankyou For Subscribing!!");
+                                clearInterval(progressInterval);
+                            }
+
+                            statusValue++;
+
+            }
+
+            var startUpload=function(){
+					barContainer.style.display="block";   
+					messagediv.style.display="none";           
+                    progressInterval = setInterval(updatebar, 1500);
+                    
+                }
+
+
+
+
+        </script>
+
+
+
+
+    </body>
+</html>
+
+
+
+<link rel="stylesheet" href="../css/form_bootstrap.css">
+<!------ Include the above in your HEAD tag ---------->
+

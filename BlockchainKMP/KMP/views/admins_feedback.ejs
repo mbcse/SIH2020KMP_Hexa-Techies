@@ -1,0 +1,137 @@
+<html>
+    <head>
+        <title>Client Feedback</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    </head>
+
+    <body class="w3-sand">
+        <h1><center>Feedback Portal : AAI</center></h1>
+        <br><hr><br>
+        <div class="container-fluid">
+            <div class="float-left">
+                <div class="w3-container">
+                    <h3 style="text-align: center;">Send a Reply</h3>
+                    <br>
+                    <div class="w3-card-4" style="width:100%;">
+                        <header class="w3-container w3-light-grey">
+                            <h3>Application ID : &nbsp;&nbsp; <span id="app_id"><%=id%></span></h3>
+                        </header>
+                        <br>
+                        <div class="w3-container">
+                            
+                            <p>Severity/Priority : &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                <select name="priority" id="priority">
+                                    <option value="LOW">LOW</option>
+                                    <option value="MEDIUM">MEDIUM</option>
+                                    <option value="HIGH">HIGH</option>
+                                </select>
+                            </p>
+
+                            <p>Title : &nbsp;
+                                <input type="text" id="msg_title" placeholder="Enter Title"/>
+                            </p>
+                            <p>Feedback : </p>
+                            <textarea id="message" placeholder="Enter your comments !" rows="5" cols="50"></textarea>
+                            <br>
+                            <hr>
+
+                        </div>
+                        <button class="w3-button w3-block w3-dark-grey" id="send">Send</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="float-right">
+                <h3 style="text-align: center;">Previous Conversations</h3>
+                <br>
+                <div class="dscroll" id="pastFeedbacks">
+                    <style>
+                        .dscroll {
+                            overflow : auto;
+                            height : 450px;
+                            width : 550px;
+                        }
+                    </style>
+
+                
+
+                </div>     
+            </div>
+        </div>
+        <footer class="footer text-center">
+            All Rights Reserved by AAI. Designed and Developed by Team-HexaTechies---SIH2020.
+        </footer>
+
+        <script src="/dashboard/assets/libs/jquery/dist/jquery.min.js"></script>
+        <script>
+
+        document.getElementById('send').addEventListener('click',()=>{
+           
+               
+                var id=<%-JSON.stringify(id)%>;
+                var p= document.getElementById('priority').value
+               var m= document.getElementById('msg_title').value;
+               var f= document.getElementById('message').value;
+                console.log(document.getElementById('msg_title').value);
+                $.ajax({
+                            type: "POST",
+                            contentType: "application/json",
+                            url: "/admin/sendfeedback",
+                            data: JSON.stringify({priority:p,title:m, feedback:f,id:id }), 
+                            success: function(response){
+                                    if(response.status){
+                                        console.log(response);
+                                    
+
+                                    }
+                                    else{
+                                        alert("Server Error");
+                                        
+                                    }
+                            }
+                });
+        });
+
+     
+        var comments=<%-JSON.stringify(comments)%>;
+var content=document.getElementById('pastFeedbacks');
+if(comments){
+        for(var i=0;i<comments.length;i++){
+        var c=comments[i];
+        content.innerHTML+=` <div class="w3-container">
+                                
+                                <div class="w3-card-4" style="width:100%;">
+                                    <header class="w3-container w3-light-grey">
+                                        <h5>By : &nbsp; <span id="by">`+c.by+`</span></h5>
+                                    </header>
+                                    <br>
+                                    <div class="w3-container">
+                                        <p>Severity/Priority : &nbsp;<span id="severity">`+c.priority+`</span></p>
+                                        <p>Title : &nbsp;<span id="comment_title">`+c.title+`</span></p>
+                                        <p>Feedback : </p>
+                                        <p id="message" >`+c.feedback+`</p>
+                                        <br><br>
+                                    </div>
+                                    <button class="w3-button w3-block w3-dark-grey">Archive</button>
+                                </div>
+                            </div>
+                        
+                            <br>`             
+
+        }
+
+
+
+    }
+
+
+
+        </script>
+
+
+
+    </body>
+</html>

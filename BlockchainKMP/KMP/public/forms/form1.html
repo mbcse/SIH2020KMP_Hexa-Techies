@@ -1,0 +1,559 @@
+﻿
+<link rel="stylesheet" href="../css/form_bootstrap.css">
+<!------ Include the above in your HEAD tag ---------->
+
+<h1> <marquee>Aerodrome License Application Form</marquee></h1>
+<h2>DETAILS OF LICENCEE (as required to be shown on the license)</h2>
+<div class="container">    
+            
+    
+            <div class="panel-body" >
+                <form method="post" action=".">
+                    <input type='hidden' name='csrfmiddlewaretoken' value='XFe2rTYl9WOpV8U6X5CfbIuOZOELJ97S' />
+                            
+
+                    <form  class="form-horizontal" method="post" >
+                        <input type='hidden' name='csrfmiddlewaretoken' value='XFe2rTYl9WOpV8U6X5CfbIuOZOELJ97S' />
+                        
+                        <div id="div_id_username" class="form-group required">
+                            <label for="id_username" class="control-label col-md-4  requiredField"> Full Name<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 ">
+                                <input class="input-md  textinput textInput form-control" id="id_username" maxlength="30" name="username" placeholder="Full Name in Capital Letters" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        
+                        <div class="form-group">
+                            <label for="inputAddress">Address<span class="asteriskField">*</span></label><br>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                            </div>
+                        <div class="form-group">
+                            <label for="inputAddress2">Address 2</label><br>
+                            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor"><br>
+                            </div>
+                        <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputCity">City<span class="asteriskField">*</span></label><br>
+                            <input type="text" class="form-control" id="inputCity"><br>
+                            </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputState">State<span class="asteriskField">*</span></label><br>
+                            <input type="text" class="form-control" id="inputState"><br>
+                            </div>
+                        <div class="form-group col-md-2">
+                            <label for="inputZip">Zip<span class="asteriskField">*</span></label><br>
+                            <input type="text" class="form-control" id="inputZip">
+                             </div>
+                            </div>
+                        
+                            </div>
+                        <div class="form-group col-md-6">
+                            <label for="phone">Phone Number:<span class="asteriskField">*</span></label><br>
+
+                            <input type="tel" id="phone" name="phone"
+                                   pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                                   required>
+                            
+                            
+                        </div>
+                        <div id="div_id_email" class="form-group required">
+                            <label for="id_email" class="control-label col-md-4  requiredField"> E-mail<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 ">
+                                <input class="input-md emailinput form-control" id="id_email" name="email" placeholder="Your current email address" style="margin-bottom: 10px" type="email" />
+                            </div>     
+                        </div>
+                        <div id="div_id_nationality" class="form-group required">
+                            <label for="id_nationality" class="control-label col-md-4  requiredField">Nationality<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control" id="id_nationality" name="nationality" placeholder="Enter your Nationality" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+                        <h2>DETAILS OF AERODROME (as required to be shown on the license)</h2>
+                        <div id="div_id_aerodromename" class="form-group required">
+                             <label for="id_aerodromename" class="control-label col-md-4  requiredField"> Place name by which the aerodrome is
+                                to be known in all future references  </label>
+                             <div class="controls col-md-8 ">
+                                <input class="input-md textinput textInput form-control" id="id_aerodromename" name="aerodromename" placeholder="" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+                        <div id="div_id_Situation of aerodrome site" class="form-group required"> 
+                            <label for="id_Situation of aerodrome site" class="control-label col-md-4  requiredField"> Situation of the aerodrome site with reference to the nearest airport, railway station and town/village </label> <br>
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control" id="id_Situation of aerodrome site" name="Situation of aerodrome site" placeholder="" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+                        <div id="div_id_State/Dis of aerodorme" class="form-group required"> 
+                            <label for="id_State/Dis of aerodorme" class="control-label col-md-4  requiredField"> State / District in which situated  </label> <br>
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control" id="id_State/Dis of aerodorme" name="State/Dis of aerodorme" placeholder="" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+                        <div id="div_id_elevation" class="form-group required"> 
+                            <label for="id_elevation" class="control-label col-md-4  requiredField"> Elevation of the Aerodrome reference point (AMSL)   </label> <br>
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control" id="id_elevation" name="elevation" placeholder="in Feet" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+                        <div id="div_id_orientation" class="form-group required"> 
+                            <label for="id_orientation" class="control-label col-md-4  requiredField">Orientation and length of runway (s) (in feet)   </label> <br>
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control" id="id_orientation" name="orientation" placeholder="in Feet" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+                        <h2>AERODROME ACTIVITIES</h2>
+                        
+                        <div id="div_id_category" class="form-group required">
+                            <label for="id_category"  class="control-label col-md-4  requiredField">State category of licence required as defined in Aircraft Rules 1937? 
+
+                            </label>
+                            <div class="controls col-md-8 "  style="margin-bottom: 10px">
+                                 <label class="radio-inline"> <input type="radio" name="category" id="id_category_1" value="PUBLIC USE"  style="margin-bottom: 10px">PUBLIC USE</label>
+                                 <label class="radio-inline"> <input type="radio" name="category" id="id_category_2" value="PRIVATE USE"  style="margin-bottom: 10px">PRIVATE USE </label>
+                            </div>
+                        </div>
+
+                        <div id="div_id_purpose" class="form-group required"> 
+                            <label for="id_purpose" class="control-label col-md-4  requiredField"> In case of private aerodrome, indicate
+                                the purpose for which the aerodrome will be used e.g. joy rides, air displays, miscellaneous instructional flying, private flying etc. 
+                            </label>
+                            <div class="controls col-md-8 "> 
+                                 <input class="input-md textinput textInput form-control" id="id_purpose" name="purpose" placeholder="" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div> 
+                        <div id="div_id_own_aircraft" class="form-group required">
+                            <label for="id_own_aircraft"  class="control-label col-md-4  requiredField">Whether your own aircraft only will use the aerodrome 
+
+                            </label>
+                            <div class="controls col-md-8 "  style="margin-bottom: 10px">
+                                 <label class="radio-inline"> <input type="radio" name="own_aircraft" id="id_own_aircraft_1" value="YES"  style="margin-bottom: 10px">YES</label>
+                                 <label class="radio-inline"> <input type="radio" name="own_aircraft" id="id_own_aircraft_2" value="NO"  style="margin-bottom: 10px">NO </label>
+                            </div>
+                        </div>
+                        <div id="div_id_ permission" class="form-group required">
+                            <label for="id_ permission"  class="control-label col-md-4  requiredField">If use by others aircraft, state whether prior permission or notice is required. 
+                            </label>
+                            <div class="controls col-md-8 "  style="margin-bottom: 10px">
+                                 <label class="radio-inline"> <input type="radio" name=" permission" id="id_ permission_1" value="YES"  style="margin-bottom: 10px">YES</label>
+                                 <label class="radio-inline"> <input type="radio" name=" permission" id="id_ permission_2" value="NO"  style="margin-bottom: 10px">NO </label>
+                            </div>
+                        </div>
+                        <div id="div_id_ night_use" class="form-group required">
+                            <label for="id_ night_use"  class="control-label col-md-4  requiredField">Is a licence for NIGHT USE/ ALL WEATHER required?  
+                            </label>
+                            <div class="controls col-md-8 "  style="margin-bottom: 10px">
+                                 <label class="radio-inline"> <input type="radio" name=" night_use" id="id_ night_use_1" value="YES"  style="margin-bottom: 10px">YES</label>
+                                 <label class="radio-inline"> <input type="radio" name=" night_use" id="id_ night_use_2" value="NO"  style="margin-bottom: 10px">NO </label>
+                            </div>
+                        </div>
+                        <div id="div_id_ lighting plan" class="form-group required">
+                            <label for="id_ lighting plan" class="control-label col-md-4  requiredField"> If the answer to above question is YES, Please provide details of proposed lighting along with the lighting plan.  </label><br>
+                            <div class="controls col-md-8 "> 
+                                 <input class="input-md textinput textInput form-control" id="id_ lighting plan" name=" lighting plan" placeholder="" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div> 
+                        <div id="div_id_" class="form-group required">
+                             <label for="id_CNS-ATM facilities" class="control-label col-md-4  requiredField"> Please provide details of proposed CNS-ATM facilities. </label></form><br>
+                             <div class="controls col-md-8 ">
+                                 <input class="input-md textinput textInput form-control" id="CNS-ATM facilities" name="CNS-ATM facilities" placeholder="" style="margin-bottom: 10px" type="text" />
+                            </div> 
+                        </div> 
+                        <div id="div_id_ MET facilities" class="form-group required">
+                            <label for="id_ MET facilities" class="control-label col-md-4  requiredField"> Please provide details of proposed MET facilities:  </label><br>
+                            <div class="controls col-md-8 ">
+                                <input class="input-md textinput textInput form-control" id=" MET facilities" name=" MET facilities" placeholder="" style="margin-bottom: 10px" type="text" />
+                            </div> 
+                        </div>
+                        <div id="div_id_other activities" class="form-group required"> 
+                            <label for="id_other activities" class="control-label col-md-4  requiredField">Please give details of other proposed aviation activities (for example gliding, parachuting, micro lights).  </label> <br>
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control" id="id_other activities" name="other activities" placeholder="" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        <div id="div_id_type" class="form-group required"> 
+                            <label for="id_type" class="control-label col-md-4  requiredField">Type of the largest / heaviest aircraft for which the aerodrome is designed  </label> <br>
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control" id="id_type" name="type" placeholder="" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        <div id="div_id_weight" class="form-group required"> 
+                            <label for="id_weight" class="control-label col-md-4  requiredField">Weight of the largest / heaviest aircraft for which the aerodrome is designed  </label> <br>
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control" id="id_weight" name="weight" placeholder="" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        <div id="div_id_length" class="form-group required"> 
+                            <label for="id_length" class="control-label col-md-4  requiredField">Length of the largest / heaviest aircraft for which the aerodrome is designed  </label> <br>
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control" id="id_length" name="length" placeholder="" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        <div id="div_id_width" class="form-group required"> 
+                            <label for="id_width" class="control-label col-md-4  requiredField">Width of the largest / heaviest aircraft for which the aerodrome is designed  </label> <br>
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control" id="id_width" name="width" placeholder="" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        <h2>CONTROL OF THE AERODROME</h2>
+                        <div id="div_id_ owner_aerodrome" class="form-group required">
+                            <label for="id_ owner_aerodrome"  class="control-label col-md-4  requiredField">Are you the owner of the aerodrome site?
+                            </label>
+                            <div class="controls col-md-8 "  style="margin-bottom: 10px">
+                                 <label class="radio-inline"> <input type="radio" name=" night_use" id="id_ owner_aerodrome_1" value="YES"  style="margin-bottom: 10px">YES</label>
+                                 <label class="radio-inline"> <input type="radio" name=" night_use" id="id_owner_aerodrome_2" value="NO"  style="margin-bottom: 10px">NO </label>
+                            </div>
+                        <h4>IF NO – Please state:</h4>
+                        <div id="div_id_rights" class="form-group required"> 
+                            <label for="id_rights" class="control-label col-md-4  requiredField">Details of the rights you hold over the land </label> <br>
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control" id="id_rights" name="rights" placeholder="" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        <h2>PERMISSIONS AND APPROVALS</h2>
+                        <h3> ENTER DATES AND REFERENCE OF APPROVAL FOR FOLLOWING AUTHORITIES   </h3>
+                        <h3> ENTER DATES AND REFERENCE OF APPROVAL FOR FOLLOWING AUTHORITIES   </h3>
+                        <h3>Ministry of Defence</h3>
+                        <div id="div_id_loa" class="form-group required"> 
+                            <label for="id_loa" class="control-label col-md-4  requiredField">Location of the proposed
+                                aerodrome/ helipad site with
+                                reference to the nearest IAF
+                                aerodrome </label> 
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control" id="id_loa" name="loa" placeholder="" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        <div id="div_id_lon" class="form-group required"> 
+                            <label for="id_lon" class="control-label col-md-4  requiredField"> Longitude of the
+                                place in six digits </label> 
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control" id="id_lon" name="lon" placeholder="" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        <div id="div_id_lat" class="form-group required"> 
+                            <label for="id_lat" class="control-label col-md-4  requiredField">Latitude of the
+                                    place in six digits </label> 
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control" id="id_lat" name="lat" placeholder="" style="margin-bottom: 10px" type="text" />
+                            </div>
+                            <div class="container my-4">
+                                <div class="row">
+                                <div class="col-md-6 mb-4">
+                                <section class="section-preview">
+                           
+                               <div class="input-group my-3">
+                                <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupFileAddon01">The site marked on a Survey of
+                                    India map or a map with latitude
+                                    and longitude downloaded from
+                                    a website (Google, Wickipedia
+                                    etc) duly countersigned by an
+                                    accredited architect  
+                                </span>
+                                </div>
+                                </div>
+                                </section>
+                                </div>
+                                <div class="col-md-6 mb-md-0 mb-4">
+                                <section class="section-preview">
+       
+                           
+                               <form class="md-form my-3">
+                               <div class="file-field">
+                                   <div class="btn btn-primary btn-sm float-left waves-effect waves-light">
+                                   <input type="file">
+                                   </div>
+                               </div>
+
+                        <div id="div_id_icao" class="form-group required"> 
+                               <label for="id_icao" class="control-label col-md-4  requiredField"> Type/category of aerodrome
+                                proposed to be constructed (ICAO
+                                Aerodrome Reference Code)  </label> 
+                                <div class="controls col-md-8 "> 
+                                    <input class="input-md textinput textInput form-control" id="id_icao" name="icao" placeholder="" style="margin-bottom: 10px" type="text" />
+                                </div>
+                        <div id="div_id_airt" class="form-group required"> 
+                                <label for="id_airt" class="control-label col-md-4  requiredField"> Type of Air Traffic Services and
+                                    watch hours.   </label> 
+                                <div class="controls col-md-8 "> 
+                                    <input class="input-md textinput textInput form-control" id="id_airt" name="airt" placeholder="" style="margin-bottom: 10px" type="text" />
+                                </div>
+                        <div id="div_id_comm" class="form-group required"> 
+                                <label for="id_comm" class="control-label col-md-4  requiredField"> Details of communication
+                                    facilities, including VHF-RT, land
+                                    lines, fax etc., planned.   </label> 
+                                <div class="controls col-md-8 "> 
+                                    <input class="input-md textinput textInput form-control" id="id_comm" name="comm" placeholder="" style="margin-bottom: 10px" type="text" />
+                                </div>
+                        <div id="div_id_op" class="form-group required"> 
+                                <label for="id_op" class="control-label col-md-4  requiredField"> Type of aircraft likely to operate.    </label> 
+                                <div class="controls col-md-8 "> 
+                                    <input class="input-md textinput textInput form-control" id="id_op" name="op" placeholder="" style="margin-bottom: 10px" type="text" />
+                                </div>
+                        <div id="div_id_vfr" class="form-group required"> 
+                                <label for="id_vfr" class="control-label col-md-4  requiredField">Type of flight operations i.e.
+                                    VFR/IFR and associated airspace
+                                    requirements     </label> 
+                                <div class="controls col-md-8 "> 
+                                    <input class="input-md textinput textInput form-control" id="id_vfr" name="vfr" placeholder="" style="margin-bottom: 10px" type="text" />
+                                </div>
+                        <div id="div_id_nav" class="form-group required"> 
+                                <label for="id_nav" class="control-label col-md-4  requiredField"> Proposed navigational aids and
+                                    other facilities.  </label> 
+                                <div class="controls col-md-8 "> 
+                                    <input class="input-md textinput textInput form-control" id="id_nav" name="nav" placeholder="" style="margin-bottom: 10px" type="text" />
+                                </div>
+                        <div id="div_id_run" class="form-group required"> 
+                                <label for="id_run" class="control-label col-md-4  requiredField"> Length of runway and its surface.
+                                    (Paved/ unpaved) </label> 
+                                <div class="controls col-md-8 "> 
+                                    <input class="input-md textinput textInput form-control" id="id_run" name="run" placeholder="" style="margin-bottom: 10px" type="text" />
+                                </div>
+                        <div id="div_id_ori" class="form-group required"> 
+                                    <label for="id_ori" class="control-label col-md-4  requiredField"> Proposed runway orientation.  </label> 
+                                    <div class="controls col-md-8 "> 
+                                        <input class="input-md textinput textInput form-control" id="id_ori" name="ori" placeholder="" style="margin-bottom: 10px" type="text" />
+                                    </div>
+                        <div id="div_id_fire" class="form-group required"> 
+                                    <label for="id_fire" class="control-label col-md-4  requiredField"> Fire fighting and Rescue services
+                                        to be made available in terms of
+                                        Airport Category.   </label> 
+                                    <div class="controls col-md-8 "> 
+                                        <input class="input-md textinput textInput form-control" id="id_fire" name="fire" placeholder="" style="margin-bottom: 10px" type="text" />
+                                    </div>
+
+                        <div id="div_id_med" class="form-group required"> 
+                                    <label for="id_med" class="control-label col-md-4  requiredField"> Availability of Medical facilities.   </label> 
+                                    <div class="controls col-md-8 "> 
+                                            <input class="input-md textinput textInput form-control" id="id_med" name="med" placeholder="" style="margin-bottom: 10px" type="text" />
+                        </div>
+                        <div id="div_id_for" class="form-group required"> 
+                            <label for="id_for" class="control-label col-md-4  requiredField">Details of the Foreign nationals
+                                employed/will be employed for
+                                construction of the project.  </label> 
+                            <div class="controls col-md-8 "> 
+                                    <input class="input-md textinput textInput form-control" id="id_for" name="for" placeholder="" style="margin-bottom: 10px" type="text" />
+                        </div>
+                        <div id="div_id_MOHA" class="form-group required"> 
+                            <label for="id_rights" class="control-label col-md-4  requiredField"> Ministry of Home Affairs </label> 
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control" id="id_MOHA" name="MOHA" placeholder="" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        <div id="div_id_Owner of the land " class="form-group required"> 
+                            <label for="id_rights" class="control-label col-md-4  requiredField"> Owner of the land  </label> 
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control" id="id_Owner of the land " name="Owner of the land " placeholder="" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        <div id="div_id_local of the land " class="form-group required"> 
+                            <label for="id_local" class="control-label col-md-4  requiredField"> Local authority such as municipal
+                                corporation / committee or urban
+                                land development Board/ authority of the
+                                State or its Country and Town Planning
+                                Department   </label> 
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control" id="id_local " name="local " placeholder="" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        <h2>AERODROME MANGEMENT PERSONNEL</h2>
+                        <h3>Board Member/ Managing Director or person having specific responsibility for safety. </h3>
+                        <h4>(To be completed only where the applicant is a company/ corporate/society)</h4>
+                        <div id="div_id_name1 " class="form-group required"> 
+                            <label for="id_name1" class="control-label col-md-4  requiredField"> Name  </label> 
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control" id="id_name1 " name="name1 " placeholder="" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        <div id="div_id_status1 " class="form-group required"> 
+                            <label for="id_status1" class="control-label col-md-4  requiredField"> Status/ Designation   </label> 
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control" id="id_status1 " name="status1 " placeholder="" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        <div class="form-group col-md-6">
+                            <label for="phone1">Telephone Number</label><br>
+
+                            <input type="tel" id="phone1" name="phone1"
+                                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                                    required>
+                        <h3>The person in charge of day to day operation of aerodrome. </h3>
+                        <h4>(Please enclose a current Curriculum Vitae [CV]) </h4>
+                        <div id="div_id_name2 " class="form-group required"> 
+                            <label for="id_name2" class="control-label col-md-4  requiredField"> Name  </label> 
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control" id="id_name2 " name="name2 " placeholder="" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        <div id="div_id_status2 " class="form-group required"> 
+                            <label for="id_status2" class="control-label col-md-4  requiredField"> Status/ Designation   </label> 
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control" id="id_status2 " name="status2 " placeholder="" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        <div class="form-group col-md-6">
+                            <label for="phone2">Telephone Number:</label><br>
+
+                            <input type="tel" id="phone2" name="phone2"
+                                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                                    required>
+                        <h3>The person responsible for Aerodrome Safety. If different from above (Please enclose a current Curriculum Vitae [CV]) </h3>
+                        <div id="div_id_name3 " class="form-group required"> 
+                            <label for="id_name3" class="control-label col-md-4  requiredField"> Name  </label> 
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control" id="id_name3 " name="name3 " placeholder="" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        <div id="div_id_status3 " class="form-group required"> 
+                            <label for="id_status3" class="control-label col-md-4  requiredField"> Status/ Designation   </label> 
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control" id="id_status3 " name="status3 " placeholder="" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        <div class="form-group col-md-6">
+                            <label for="phone3">Telephone Number:</label><br>
+
+                            <input type="tel" id="phone3" name="phone3"
+                                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                                    required>
+                        <h3>Provider of the CNS - ATM </h3>
+                        <div id="div_id_name4 " class="form-group required"> 
+                            <label for="id_name4" class="control-label col-md-4  requiredField"> Name  </label> 
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control" id="id_name4 " name="name4 " placeholder="" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        <div class="form-group">
+                            <label for="inputAddress3">Address </label><br>
+                            <input type="text" class="form-control" id="inputAddress3" placeholder="">
+                            </div>
+                        <h3>Provider of the MET services </h3>
+                        <div id="div_id_name5 " class="form-group required"> 
+                            <label for="id_name5" class="control-label col-md-4  requiredField"> Name  </label> 
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control" id="id_name5 " name="name5 " placeholder="" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        <div class="form-group">
+                            <label for="inputAddress4">Address </label><br>
+                            <input type="text" class="form-control" id="inputAddress4" placeholder="">
+                            </div>
+                        <h3>The person responsible for overseeing the day to day provisions of the Air Traffic Management </h3>    
+                        <div id="div_id_name6 " class="form-group required"> 
+                            <label for="id_name6" class="control-label col-md-4  requiredField"> Name  </label> 
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control" id="id_name6 " name="name6 " placeholder="" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        <div id="div_id_status4 " class="form-group required"> 
+                            <label for="id_status4" class="control-label col-md-4  requiredField"> Status/ Designation   </label> 
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control" id="id_status4 " name="status4 " placeholder="" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        <div class="form-group col-md-6">
+                            <label for="phone4">Telephone Number:</label><br>
+
+                            <input type="tel" id="phone4" name="phone4"
+                                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                                    required>  
+                        <h3>The person responsible for overseeing the day to day provisions of CNS </h3> 
+                        <div id="div_id_name7 " class="form-group required"> 
+                            <label for="id_name7" class="control-label col-md-4  requiredField"> Name  </label> 
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control" id="id_name7 " name="name7 " placeholder="" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        <div id="div_id_status5 " class="form-group required"> 
+                            <label for="id_status5" class="control-label col-md-4  requiredField"> Status/ Designation   </label> 
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control" id="id_status5 " name="status5" placeholder="" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        <div class="form-group col-md-6">
+                            <label for="phone5">Telephone Number:</label><br>
+
+                            <input type="tel" id="phone5" name="phone5"
+                                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                                    required>  
+                        <h3>The person responsible for overseeing the day to day provisions of RFF  </h3> 
+                        <div id="div_id_name8 " class="form-group required"> 
+                            <label for="id_name8" class="control-label col-md-4  requiredField"> Name  </label> 
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control" id="id_name8 " name="name8 " placeholder="" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        <div id="div_id_status5 " class="form-group required"> 
+                            <label for="id_status6" class="control-label col-md-4  requiredField"> Status/ Designation   </label> 
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control" id="id_status6 " name="status6" placeholder="" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        <div class="form-group col-md-6">
+                            <label for="phone6">Telephone Number:</label><br>
+
+                            <input type="tel" id="phone6" name="phone6"
+                                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                                    required>     
+                        <h3>The person responsible for overseeing the day to day provisions of MET services</h3>
+                        <div id="div_id_name9 " class="form-group required"> 
+                            <label for="id_name9" class="control-label col-md-4  requiredField"> Name  </label> 
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control" id="id_name9 " name="name9 " placeholder="" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        <div id="div_id_status5 " class="form-group required"> 
+                            <label for="id_status7" class="control-label col-md-4  requiredField"> Status/ Designation   </label> 
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control" id="id_status7 " name="status7" placeholder="" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        <div class="form-group col-md-6">
+                            <label for="phone7">Telephone Number:</label><br>
+
+                            <input type="tel" id="phone7" name="phone7"
+                                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                                    required>    
+                        <h2>AERODROME MANUAL</h2>
+                        <div id="div_id_ manual" class="form-group required">
+                            <label for="id_ night_use"  class="control-label col-md-4  requiredField">Is an Aerodrome Manual enclosed with this application? (Ref Rule 81)  
+                            </label>
+                        <div class="controls col-md-8 "  style="margin-bottom: 10px">
+                                <label class="radio-inline"> <input type="radio" name=" night_use" id="id_ manual_1" value="YES"  style="margin-bottom: 10px">YES</label>
+                                <label class="radio-inline"> <input type="radio" name=" night_use" id="id_ manual_2" value="NO"  style="margin-bottom: 10px">NO </label>
+                        </div>
+                        <div id="div_id_ifno " class="form-group required"> 
+                            <label for="id_ifno" class="control-label col-md-4  requiredField">If no please indicate when this is likely to be submitted to DGCA.   </label> 
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control" id="id_ifno " name="ifno " placeholder="" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        <h2>DETAILS OF FEES</h2>
+                        <div id="div_id_chno. " class="form-group required"> 
+                            <label for="id_chno" class="control-label col-md-4  requiredField">Challan No. for online deposit    </label> 
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control" id="id_chno. " name="chno. " placeholder="" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        <div id="div_id_amnt. " class="form-group required"> 
+                            <label for="id_amnt." class="control-label col-md-4  requiredField">Amount (Attach a sheet showing the calculation of amount as per runway length)   </label> 
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control" id="id_amnt. " name="amnt. " placeholder="" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        <div id="div_id_bank " class="form-group required"> 
+                            <label for="id_bank" class="control-label col-md-4  requiredField">Date & name of the drawee bank    </label> 
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control" id="id_bank " name="bank " placeholder="" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        <div id="div_id_other " class="form-group required"> 
+                            <label for="id_other" class="control-label col-md-4  requiredField">ANY OTHER INFORMATION:    </label> 
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control" id="id_other " name="other " placeholder="" style="margin-bottom: 10px" type="text" />
+                            </div>
+
+                        <div class="form-group">
+                            <div class="controls col-md-offset-4 col-md-8 ">
+                                <div id="div_id_terms" class="checkbox required">
+                                    <label for="id_terms" class=" requiredField">
+                                         <input class="input-ms checkboxinput" id="id_terms" name="terms" style="margin-bottom: 10px" type="checkbox" />
+                                         I hereby certify that the forgoing information is correct in every respect and no
+relevant information has been withheld. 
+                        <div class="container"> 
+                            <input type="submit" class="btn btn-success" value="Submit">
+                        </div>
+
+
+                                    </label>
+                                </div> 
+                                    
+                            </div>
+                        </div> 
+                    </div>
+                
+                            
+                    </form>
+
+                </form>
+            </div>
+        </div>
+    </div> 
+</div>
+    
+
+
+
+
+
+</div>            
+
+<hr>
+<br>
+        
+<input type="button" class="btn btn-success" value="Go Back" onclick="history.back(-1)" />
