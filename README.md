@@ -1,5 +1,10 @@
 # SIH2020  Blockchain Based KMP(Airport Authority Of India Project)
 
+<hr>
+<h1> Flow Diagram of the Project </h1>
+<hr>
+<img src="Flow_Diagram.jpg">
+<hr>
 ## Problem Statement
 A web Based application using **Blockchain** technology is sought from **Airport Licensing** to retrive 
 important and relevant **Project related information from of pool of data source i.e, SAP, E-mail, E-Office, Scan documents and DataBase**. Below features are desired in an application:
@@ -30,8 +35,3 @@ important and relevant **Project related information from of pool of data source
 - Aditiya Singh and K.Manohar=>AI 
 - Chahat Bindra and M.Vineeth=>Frontend
 
-<hr>
-<h1> Flow Diagram of the Project </h1>
-<hr>
-
-<img src="Flow_Diagram.jpg">
