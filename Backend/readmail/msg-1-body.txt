@@ -1,0 +1,3 @@
+License number: AAI1234
+Project Name: IGI license issuance
+Please collect your license from DOAS
