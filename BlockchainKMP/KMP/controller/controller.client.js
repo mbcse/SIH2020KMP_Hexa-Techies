@@ -23,7 +23,8 @@ newApplication:function(req,res,next){
        console.log(req.body);
        var application=new applicationsDB({_id: newId(),                                      
               applicant_name :req.body.username,
-              full_address:req.body.applicantAddress+" "+req.body.applicantAddress2+","+req.body.applicantCity+","+req.body.applicantState+","+req.body.applicantZip,
+              applicant_id:req.session.user,
+              full_address:req.body.applicantAddress+","+req.body.applicantAddress2+","+req.body.applicantCity+","+req.body.applicantState+","+req.body.applicantZip,
               tel_no : req.body.applicantPhone,
               email : req.body.applicantEmail,
               nationality: req.body.applicantNationality,
@@ -184,6 +185,51 @@ applicationDetails:function(req,res){
        applicationsDB.findById(applicationId,(err,data)=>{
               res.render('application_details_client',{data:data}); 
          });
+
+},
+
+
+feedback:function(req,res){
+       console.log(req.body);
+       var id=req.body.id;
+       var  priority=req.body.priority;
+       var title=req.body.title;
+       var feedback=req.body.feedback;
+
+       applicationsDB.findById(id,(err,application)=>{
+       if (err) res.json({status:false});
+       var obj={by:req.session.access,priority:priority,title:title,feedback:feedback};
+       if(application.comments==null)
+       application.comments=[obj];
+       else
+       application.comments.push(obj);
+       
+       application.save();
+       res.json({status:true});
+       });
+
+},
+
+feedbackPage:function(req,res){
+
+
+var id=req.params.id;
+applicationsDB.findById(id,(err,result)=>{
+
+       res.render('client_feedback',{id:id,comments:result.comments});
+});
+
+
+
+},
+
+updateApplication:function(req,res){
+
+       var id=req.params.id;
+       applicationsDB.findById(id,(err,application)=>{
+
+              res.render('update',{data:application});
+       });
 
 }
 

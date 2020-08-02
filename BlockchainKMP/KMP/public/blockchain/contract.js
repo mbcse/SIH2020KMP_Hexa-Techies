@@ -477,6 +477,6 @@ var kmpABI=[
 ];
 
 
-var kmpADDRESS="0x52fb0a59692884d7c014bf5ccb80116384c2e7ce";
+var kmpADDRESS="0xc447d08d9aa06e586990aba0894f9f7d4379e508";
 
 var KMPcontract=new web3.eth.Contract(kmpABI,kmpADDRESS);

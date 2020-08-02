@@ -3,7 +3,7 @@ var router = express.Router();
 var indexController=require('../controller/controller.index');
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.send('This is Homepage Under Development');
+  res.render("index");
 });
 
 router.get('/loginpage', function(req, res, next) {

@@ -405,7 +405,10 @@
 
                 
                 if(data.ministry_defence)
-                    df="<td> Uploaded </td>";
+                    df=`<td> Uploaded <form enctype="multipart/form-data" onsubmit="event.preventDefault();uploadDocs(this, '/client/uploaddfapproval/`+data._id+`','`+data._id+`')" id="uploadDF" method="post">
+                                    <input id="fileudl" type="file" name='filedf' />
+                                    <input type="submit" value="ReUpload">
+                                </form></td>`;
                 else
                     df=`<td>
                                 <form enctype="multipart/form-data" onsubmit="event.preventDefault();uploadDocs(this, '/client/uploaddfapproval/`+data._id+`','`+data._id+`')" id="uploadDF" method="post">

@@ -345,7 +345,7 @@ font-family: 'Roboto';font-size: 15px;
                           <th class="border-top-0">Send To DG</th>
                           <th class="border-top-0">Issue License</th>
                           <th class="border-top-0">Reject Application</th>
-
+                          <th class="border-top-0">Delete Application</th>
                   
                         
                       </tr>
@@ -360,6 +360,7 @@ font-family: 'Roboto';font-size: 15px;
                       <td><button class="btn-primary" onclick="senddg()"  id="assignai">Send</button></td>
                       <td><button class="btn-success" onclick="issuelicense()"  id="issuelicense">Issue</button></td>
                       <td><button class="btn-danger" onclick="rejectApplication()"  id="issuelicense">Reject</button></td>
+                      <td><a class="btn-danger btn-lg" href="/admin/deleteapplication/<%=data._id%>"  id="deleteApplication">Delete</button></a>
 
                   </tbody>
               </table>
@@ -482,7 +483,7 @@ font-family: 'Roboto';font-size: 15px;
         xmlHttp.open( "GET", '/admin/senddg/'+<%-JSON.stringify(data._id)%>, false ); // false for synchronous request
         xmlHttp.send( null );
         if(JSON.parse(xmlHttp.responseText).status)
-           alert("Assigned to AI Successfully");
+           alert("Sent to DG Successfully");
         else
            alert("Error Try Again"); 
    }
@@ -493,10 +494,21 @@ font-family: 'Roboto';font-size: 15px;
         xmlHttp.open( "GET", '/admin/issuelicense/'+<%-JSON.stringify(data._id)%>, false ); // false for synchronous request
         xmlHttp.send( null );
         if(JSON.parse(xmlHttp.responseText).status)
-           KMPcontract.methods.grantLicense(<%-JSON.stringify(data._id)%>,JSON.parse(xmlHttp.responseText).licenseno).send({from:userAccount},(err,tx)=>{})
+        {
+        var licenceno=(JSON.parse(xmlHttp.responseText)).licenseno;
+        console.log(licenceno);
+           KMPcontract.methods.grantLicense(<%-JSON.stringify(data._id)%>,licenceno).send({from:userAccount},(err,tx)=>{})
            .on('receipt',(rc)=>{
-              alert("Licensed Issued");
-           })
+                  console.log(rc);
+                  var xmlHttp = new XMLHttpRequest();
+                  xmlHttp.open( "GET", '/admin/generatecertificate/'+<%-JSON.stringify(data._id)%>+'/'+rc.blockHash, false ); // false for synchronous request
+                  xmlHttp.send( null );
+                  if(JSON.parse(xmlHttp.responseText).status)
+                        alert("Licensed Issued");
+                  else
+                        alert("Error  Try Again"); 
+           });
+        }   
         else
            alert("Error Try Again"); 
    }  
@@ -510,7 +522,7 @@ font-family: 'Roboto';font-size: 15px;
         if(JSON.parse(xmlHttp.responseText).status)
            KMPcontract.methods.grantLicense(<%-JSON.stringify(data._id)%>,JSON.parse(xmlHttp.responseText).licenseno).send({from:userAccount},(err,tx)=>{})
            .on('receipt',(rc)=>{
-              alert("Licensed Issued");
+             alert("Application Rejected")
            });
         else
            alert("Error Try Again"); 

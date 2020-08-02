@@ -1,12 +1,23 @@
 var express = require('express');
 var applicationsDB=require('../models/application');
 var userdb=require('../models/usersdb');
-const { render } = require('ejs');
-const { use } = require('../routes/route.admin');
-
+const { json } = require('body-parser');
+var spawn = require("child_process").spawn; 
 function newLicense(){
        let randomNum = Math.random() * ((new Date()/1000) - 1) + 1;
        return "AAI-LICENSE-"+Math.floor(randomNum+(new Date()/1000));
+}
+
+
+
+function getdate(){
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+
+today = mm + '/' + dd + '/' + yyyy;
+return today;
 }
 
 module.exports={
@@ -61,6 +72,7 @@ doasApprove:function(req,res){
        if(req.session.access=="doas"){
               applicationsDB.findById(id,(err,application)=>{
               application.approval_DOAS="Accepted";
+              application.save();
               res.json({status:true})
               });
 
@@ -95,6 +107,7 @@ dgApprove:function(req,res){
        if(req.session.access=="dg"){
               applicationsDB.findById(id,(err,application)=>{
                  application.approval_DG="Accepted";
+                 application.save();
                  res.json({status:true})
               });
 
@@ -172,16 +185,18 @@ assignToDg:function(req,res){
 issueLicense:function(req,res){
 
        var id =req.params.id;
-       if(req.params.access=="doas"){
+       if(req.session.access=="doas"){
+              
               applicationsDB.findById(id,(err,application)=>{
 
                      if(err) res.json({status:false});
                      else
-                     {
-                            if(application.approval_DOAS=="Approved" && application.approval_AI=="Approved" && application.approval_DG=="Approved"){
-                                   application.licenseIssued=newLicense();
+                     {console.log("working");
+                            if(true){
+                                   var l=newLicense();
+                                   application.licenseIssued=l;
                                    application.save();
-                                   res.json({status:true, licenseno:application.licenseIssued});
+                                   res.json({status:true, licenseno:l});
                             
                             }
                             else{
@@ -195,6 +210,54 @@ issueLicense:function(req,res){
        }else{
               res.json({status:false});
        }
+},
+
+generateCertificate:function(req,res){
+
+       var id=req.params.id;
+       var txhash=req.params.hash;
+       if(req.session.access=="doas"){
+              applicationsDB.findById(id,(err,application)=>{
+
+                     if(err) res.json({status:false});
+                     else
+                     {
+                            if(application.approval_DOAS=="Approved" && application.approval_AI=="Approved" && application.approval_DG=="Approved"
+                            && application.licenseIssued!=="Not Issued"){
+                                  
+                                   var process = spawn('python',["./public/certificate_script/certificate.py",application.aerodrome_category,application._id,application.licenseIssued,
+                                   application.applicant_name,application.location_aerodrome+application.site_aerodrome, application.latitude, application.longitude,getdate(), "AAIKMP",txhash] );
+                                   console.log(process);
+                                   process.stdout.on('data', function(data) { 
+                                   var d=JSON.parse(data.toString());
+                                   console.log(d);
+                                   if(d.status){
+                                          
+                                          res.json({status:true});
+                                   }else
+                                   {    
+                                          res.json({status:false});
+                                   }
+                                   });
+                                   
+                                   
+                            
+                            }
+                            else{
+                                   res.json({status:false}); 
+                            }
+                     }
+
+              });
+
+
+       }else{
+              res.json({status:false});
+       }
+
+
+
+
 },
 
 rejectApplication:function(req,res){
@@ -220,6 +283,56 @@ rejectApplication:function(req,res){
        else{
               res.json({status:false})
        }
+},
+
+
+deleteApplication:function(req,res){
+
+var id=req.params.id;
+
+applicationsDB.findById(id,(err,app)=>{
+       if(err) throw err;
+       applicant=app.applicant_id;
+      
+       if(req.session.access=="doas"){
+            
+                           
+                            userdb.findById(req.session.user,(err,resu)=>{
+                                   if(err) throw err;
+                                   console.log(resu);
+                                   resu.applications.pull(id);
+                                   resu.save();
+
+
+                                   
+                                   userdb.findById(applicant,(err,resu)=>{
+                                          if(err) throw err;
+                                          console.log(resu);
+                                          resu.applications.pull(id);
+                                          resu.save();
+
+                                          applicationsDB.findByIdAndRemove(id, (err,result)=>{
+                                                 if(err) throw err;
+                                                 res.redirect('/admin/doas/dashboard');
+
+                                          });
+                                          
+                                   });
+
+                                   
+                                   
+                            });
+                          
+                            
+       }
+    
+      
+       else{
+              res.redirect('/admin/dashboard');
+       }
+       
+
+});
 }
     
     

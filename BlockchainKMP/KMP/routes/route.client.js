@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var clientController=require('../controller/controller.client');
-var middlewares=require('..//services/middlewares');
+var middlewares=require('../services/middlewares');
 /* GET user dashboard */
 router.get('/dashboard',clientController.checkClientLoggedIn, clientController.clientDashboard);
 
@@ -19,5 +19,13 @@ router.post('/uploadam/:id',middlewares.approvalUpload.single('file'),clientCont
 router.post('/uploadloapproval/:id',middlewares.approvalUpload.single('file'),clientController.uploadLO);
 
 router.get('/applicationdetails/:id',clientController.checkClientLoggedIn,clientController.applicationDetails)
+
+router.post('/sendfeedback',clientController.checkClientLoggedIn,clientController.feedback);
+
+router.get('/feedbackpage/:id',clientController.checkClientLoggedIn,clientController.feedbackPage);
+router.get('/updateapplication/:id',clientController.checkClientLoggedIn,clientController.updateApplication);
+
+
+
 
 module.exports = router;

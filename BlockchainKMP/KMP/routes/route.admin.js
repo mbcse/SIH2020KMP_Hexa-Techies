@@ -26,6 +26,9 @@ router.get('/rejectapplication/:id',adminController.checkClientLoggedIn,adminCon
 
 router.get('/assignai/:id',adminController.checkClientLoggedIn,adminController.assignToAI);
 router.get('/senddg/:id',adminController.checkClientLoggedIn,adminController.assignToDg)
-router.get('/issuelicense/:id',adminController.checkClientLoggedIn,adminController.issueLicense)
+router.get('/issuelicense/:id',adminController.checkClientLoggedIn,adminController.issueLicense);
+router.get('/generatecertificate/:id/:hash',adminController.checkClientLoggedIn,adminController.generateCertificate);
+router.get('/deleteapplication/:id',adminController.checkClientLoggedIn,adminController.deleteApplication);
+
 
 module.exports = router;
