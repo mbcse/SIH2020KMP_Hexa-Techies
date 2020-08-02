@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="shortcut icon" type="image/png" href="">
+  <title>Application Details</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap core CSS -->
+  <link href="/applicationDetailsPage/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="/applicationDetailsPage/css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="/applicationDetailsPage/css/style.min.css" rel="stylesheet">
+
+
+<style>
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+</style>
+
+<style>
+header {
+    font-family: 'Roboto';
+}
+</style>
+<style type="text/css">
+  .btn-round-lg{
+border-radius: 22.5px;
+font-family: 'Roboto';font-size: 15px;
+}
+</style>
+<link href='https://fonts.googleapis.com/css' rel='stylesheet'>
+
+<script src="/blockchain/web3.min.js"></script>
+<script src="/blockchain/contract.js"></script>
+
+</head>
+
+<body>
+
+  <!-- Navbar -->
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+        <div class="container">
+
+          <!-- Brand -->
+          <a class="navbar-brand" href="">
+            <button type="button" class="btn btn-default btn-round-lg"><strong><%=data._id%></strong></button>
+          </a>
+
+          <!-- Collapse -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- Links -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Left -->
+            <ul class="navbar-nav mr-auto">
+
+           
+
+
+            </ul>
+
+            <!-- Right -->
+            <ul class="navbar-nav nav-flex-icons">
+
+              
+              <li class="nav-item">
+                  <a href="/client/dashboard" class="nav-link border border-light rounded">
+                    <i class="fa fa-user mr-2"></i>Home
+                  </a>
+                </li>&nbsp;&nbsp;
+
+                <li class="nav-item">
+                  <a href="/client/feedbackpage/<%=data._id%>" class="nav-link border border-light rounded">
+                    <i class="fa fa-user mr-2"></i>Give FeedBack
+                  </a>
+                </li>&nbsp;&nbsp;  
+
+          
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- Navbar -->
+
+  <!--Main layout-->
+  <main class="mt-5 pt-4">
+    <div class="container">
+
+      <h3 class="my-5 h3 text-center">Application details</h3>
+
+     <table id="customers">
+    <tr>
+    <th>Applicant Name</th>
+    <td><%=data.applicant_name%></td>
+    <th>Applicant Address</th>
+    <td><%=data.full_address%></td>
+    <th>Email</th>
+    <td><%=data.email%></td>
+  </tr>
+  <tr>
+    <th>Applicant PhoneNo</th>
+    <td><%=data.tel_no%></td>
+    <th>Location of Aerodrome</th>                                                           
+    <td><%=data.location_aerodrome%></td>
+    <th>Total Land Area Indentified </th>
+    <td><%=data.land_area%></td>
+  </tr>
+  <tr>
+    <th>Category of Aerodrome proposed</th>
+    <td><%=data.aerodrome_category%></td>
+    <th>Site of Aerodrome</th>
+    <td><%=data.site_aerodrome%></td>
+    <th>District/State of Aerodrome</th>
+    <td><%=data.state_district%></td>
+  </tr>
+    <tr>
+    <th>Estimated Total Project Cost</th>
+    <td><%=data.estimated_project_cost%></td>
+    <th>Capacity of passengers proposed</th>
+    <td><%=data.capacity_passengers%></td>
+    <th>Capacity of cargo proposed</th>
+    <td><%=data.capacity_cargo%></td>
+  </tr>
+    <tr>
+    <th>Number of Runways</th>
+    <td><%=data.number_of_runways%></td>
+    <th>Length of Runways</th>
+    <td><%=data.length_of_runways%></td>
+    <th>Number of Taxiways</th>
+    <td><%=data.number_of_taxiways%></td>
+  </tr>
+    <tr>
+    <th>Area of Passengers Terminal</th>
+    <td><%=data.area_of_passenger_terminal%></td>
+    <th>Area of Cargo Terminal</th>
+    <td><%=data.area_of_cargo_terminal%></td>
+    <th>Total cost of Land</th>
+    <td><%=data.total_land_cost%></td>
+  </tr>
+    <!-- <tr>
+    <th>Person Name</th>
+    <td></td>
+    <th>PreQualification</th>
+    <td></td>
+    <th>PublishedDate</th>
+    <td></td>
+  </tr> -->
+</table>
+
+<br><br>
+
+      <!--Grid row-->
+      <div class="row d-flex justify-content-center">
+
+        <!--
+        <div class="col-md-8 text-center">
+
+          <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo qui laboriosam nihil reiciendis fugit eius nostrum
+            ipsum odio, voluptate debitis laborum perspiciatis voluptatibus? Culpa expedita rem totam eos fugit atque!</p>
+
+        </div>
+        -->
+
+      </div>
+      <!--Grid row-->
+
+
+
+      <!--Grid row-->
+      <div class="row text-center wow fadeIn">
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-12 mb-4">
+
+          <!--Card-->
+          <div class="card">
+
+            <!-- Card header -->
+            <div class="card-header">
+              <h4>
+                <strong>Approval Docs</strong>
+              </h4>
+            </div>
+
+            <!--Card content-->
+            <div class="card-body">
+
+      <table id="customers">
+    <tr>
+    <th>Home Ministry</th>
+    <td><span id="hmdoc">-</span ></td>
+  </tr>
+  <tr>
+    <th>Defense Ministry</th>
+    <td><span id="dfdoc">-</span ></td>
+  </tr>
+  <tr>
+    <th>Land Owner</th>
+    <td><span id="lodoc">-</span ></td>
+</table>
+
+            </div>
+
+          </div>
+          <!--/.Card-->
+
+        </div>
+        <!--Grid column-->
+
+
+
+                <!--Grid column-->
+        <div class="col-lg-4 col-md-12 mb-4">
+
+          <!--Card-->
+          <div class="card">
+
+            <!-- Card header -->
+            <div class="card-header">
+              <h4>
+                <strong>Other</strong>
+              </h4>
+            </div>
+
+            <!--Card content-->
+            <div class="card-body">
+
+      <table id="customers">
+    <tr>
+    <th>Aerodrome Manual</th>
+    <td ><span id="amdoc">-</span ></td>
+  </tr>
+  <tr>
+    <th>Fee Paid</th>
+    <td>Yes</td>
+  </tr>
+  <tr>
+    <th>Amount Paid</th>
+    <td>10000</td>
+</table>
+
+            </div>
+
+          </div>
+          <!--/.Card-->
+
+        </div>
+        <!--Grid column-->
+
+                <!--Grid column-->
+        <div class="col-lg-4 col-md-12 mb-4">
+
+          <!--Card-->
+          <div class="card">
+
+            <!-- Card header -->
+            <div class="card-header">
+              <h4>
+                <strong>Approvals</strong>
+              </h4>
+            </div>
+
+            <!--Card content-->
+            <div class="card-body">
+
+      <table id="customers">
+    <tr>
+    <th>AI</th>
+    <td id="aiapproval"><%=data.approval_AI%></td>
+  </tr>
+  <tr>
+    <th>DOAS</th>
+    <td id="doasapproval"><%=data.approval_DOAS%></td></td>
+  </tr>
+  <tr>
+    <th>DG</th>
+    <td id="dgapproval"><%=data.approval_DG%></td></td>
+</table>
+
+            </div>
+
+          </div>
+          <!--/.Card-->
+
+        </div>
+        <!--Grid column-->
+      </div>
+<div class="container" id="docs">
+
+</div>
+</div>
+
+
+<a href="/client/updateapplication/<%=data._id%>" class="btn-success">Update Application</a>
+    
+  </main>
+  <!--Main layout-->
+
+<!--Footer-->
+  <footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+    <!--Call to action-->
+
+    <!--/.Copyright-->
+
+  </footer>
+  <!--/.Footer-->
+
+  <!-- SCRIPTS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+
+  <script>
+
+   window.onload=()=>{
+    content=document.getElementById('docs');
+    KMPcontract.methods.getApprovalDocs(<%-JSON.stringify(data._id)%>).call({from:userAccount},(err,result)=>{
+      console.log(result);
+    var hmapproval=result.hm;
+    var dfapproval=result.df;
+    var amanual=result.am;
+    var loapproval=result.lo;
+    if(hmapproval!==""){
+      document.getElementById('hmdoc').innerHTML="Uploaded";
+      content.innerHTML+=`<div class="col-md-6">
+                <center>
+                <iframe src="https://gateway.ipfs.io/ipfs/`+result.hm+`" frameborder="0" style="overflow:hidden;height:300px;" width="100%" height="580"></iframe>
+                </center>
+                </div>`
+
+    }
+      
+    else   
+      document.getElementById('hmdoc').innerHTML="Not Uploaded"; 
+    if(dfapproval!==""){
+      document.getElementById('dfdoc').innerHTML="Uploaded";
+      content.innerHTML+=`<div class="col-md-6">
+                <center>
+                <iframe src="https://gateway.ipfs.io/ipfs/`+result.df+`" frameborder="0" style="overflow:hidden;height:300px;" width="100%" height="580"></iframe>
+                </center>
+                </div>`
+    }
+      
+    else   
+      document.getElementById('dfdoc').innerHTML="Not Uploaded";
+    if(amanual!==""){
+      document.getElementById('amdoc').innerHTML="Uploaded";
+      content.innerHTML+=`<div class="col-md-6">
+                <center>
+                <iframe src="https://gateway.ipfs.io/ipfs/`+result.am+`" frameborder="0" style="overflow:hidden;height:300px;" width="100%" height="580"></iframe>
+                </center>
+                </div>`
+    }
+   
+    else   
+      document.getElementById('amdoc').innerHTML="Not Uploaded";
+    if(loapproval!==""){
+      document.getElementById('lodoc').innerHTML="Uploaded";
+      content.innerHTML+=`<div class="col-md-6">
+                <center>
+                <iframe src="https://gateway.ipfs.io/ipfs/`+result.lo+`" frameborder="0" style="overflow:hidden;height:300px;" width="100%" height="580"></iframe>
+                </center>
+                </div>`
+    }
+      
+    else   
+      document.getElementById('lodoc').innerHTML="Not Uploaded";
+    })
+    
+    
+   }
+
+  
+ </script>
+  <!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="/applicationDetailsPage/js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="/applicationDetailsPage/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="/applicationDetailsPage/js/mdb.min.js"></script>
+  <!-- Initializations -->
+  <script type="text/javascript">
+    // Animations initialization
+    new WOW().init();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Registration form</title>
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Font-->
+
+	<link rel="stylesheet" type="text/css" href="/registrationForm/css/montserrat-font.css">
+	<link rel="stylesheet" type="text/css" href="/registrationForm/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+	<!-- Main Style Css -->
+	<link rel="stylesheet" href="/registrationForm/css/style.css"/>
+	<link rel="stylesheet" href="/registrationForm/https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body class="form-v10">
+	<div class="page-content">
+		<div class="form-v10-content">
+			<form class="form-detail" action="/register" method="post" id="myform">
+				<div class="form-left">
+					<h2>General Infomation</h2>
+					<div class="form-row">
+						<select name="category">
+						    <option class="option" value="client">Client</option>
+						    <option class="option" value="ai">Aerodrome Inspector</option>
+						    <option class="option" value="doas">DOAS</option>
+						    <option class="option" value="dg">Director General</option>
+						</select>
+						<span class="select-btn">
+						  	<i class="zmdi zmdi-chevron-down"></i>
+						</span>
+					</div>
+					<div class="form-group">
+						<div class="form-row form-row-1">
+							<input type="text" name="first_name" id="first_name" class="input-text" placeholder="First Name" required>
+						</div>
+						<div class="form-row form-row-2">
+							<input type="text" name="last_name" id="last_name" class="input-text" placeholder="Last Name" required>
+						</div>
+					</div>
+					
+					<div class="form-row" >
+						<input type="text" name="ethaddress" class="department" id="ethaddress" placeholder="Ethereum Address" required>
+					</div>
+			
+					
+					<div class="form-row" >
+						<input type="text" name="passport" class="department" id="passport" placeholder="Passport Number" required>
+					</div>
+				</div>
+				<div class="form-right">
+					<h2>Contact Details</h2>
+					
+					
+					<div class="form-row">
+						<input type="text" name="country" class="department" id="country" placeholder="country" required>
+					</div>
+					
+						
+					  
+					<div class="form-group">
+						<div class="form-row form-row-1">
+							<input type="text" name="code" class="code" id="code" placeholder="Code +" required>
+						</div>
+						<div class="form-row form-row-2">
+							<input type="text" name="phone" class="phone" id="phone" placeholder="Phone Number" required>
+						</div>
+					</div>
+					<div class="form-row">
+						<input type="text" name="email" id="your_email" class="input-text" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" placeholder="Your Email">
+					</div>
+					<div class="form-row">
+						<div class="col-sm-10">
+						  <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Password">
+						</div>
+					<div class="form-checkbox">
+						<label class="container"><p>I do accept the <a href="#" class="text">Terms and Conditions</a> of your site.</p>
+						  	<input type="checkbox" name="checkbox">
+						  	<span class="checkmark"></span>
+						</label>
+					</div>
+					<div class="form-row-last">
+						<input type="submit" name="register" class="register" value="Register">
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
