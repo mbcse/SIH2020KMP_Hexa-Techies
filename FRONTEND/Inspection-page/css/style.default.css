@@ -1,0 +1,291 @@
+/* 
+========================================= 
+========================================= 
+
+   Bootstrapious Under Construction Template
+
+========================================= 
+========================================= */
+/*
+* 
+* =====================
+* GENERAL
+* =====================
+*
+*/
+@media (max-width: 991.98px) {
+  h1 {
+    font-size: 1.75rem !important;
+  }
+}
+
+.intro-right {
+  min-height: 500px;
+  background: url("../img/pexels-photo-40120.jpg") center center no-repeat;
+  background-size: cover;
+}
+
+.credit {
+  margin-top: 3rem;
+  font-size: 0.8rem;
+  color: #adb5bd;
+}
+
+/*
+
+=====================
+SOCIAL LINKS
+=====================
+
+*/
+.social {
+  text-align: left;
+  margin-top: 40px;
+}
+
+.social a {
+  margin: 0 10px 0 0;
+  color: #333;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  line-height: 40px;
+  font-size: 13px;
+  text-align: center;
+  transition: all 0.2s ease-out;
+  border: solid 1px #333;
+}
+
+.social a i {
+  vertical-align: bottom;
+  line-height: 40px;
+}
+
+.social a:hover {
+  background: transparent;
+}
+
+.social a:hover.facebook {
+  color: #4460ae;
+  border-color: #4460ae;
+}
+
+.social a:hover.youtube {
+  color: #c21f25;
+  border-color: #c21f25;
+}
+
+.social a:hover.twitter {
+  color: #3cf;
+  border-color: #3cf;
+}
+
+.social a:hover.instagram {
+  color: #cd4378;
+  border-color: #cd4378;
+}
+
+.social a:hover.email {
+  color: #4a7f45;
+  border-color: #4a7f45;
+}
+
+.social a:hover.link {
+  color: #871AFF;
+  border-color: #871AFF;
+}
+
+.text-small {
+  font-size: 0.9rem !important;
+}
+
+.text-uppercase {
+  letter-spacing: 0.2em !important;
+}
+
+.headings-font-family {
+  font-family: inherit !important;
+}
+
+.font-family-base {
+  font-family: Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+}
+
+/*
+
+=====================
+STYLE SWITCHER FOR DEMO
+=====================
+
+*/
+#style-switch-button {
+  position: fixed;
+  top: 120px;
+  left: 0px;
+  border-radius: 0;
+  z-index: 2;
+}
+
+#style-switch {
+  width: 300px;
+  padding: 20px;
+  position: fixed;
+  top: 160px;
+  left: 0;
+  background: #fff;
+  border: solid 1px #ced4da;
+  z-index: 2000;
+}
+
+#style-switch h4 {
+  color: #495057;
+}
+
+/* ========================================= 
+   
+      THEMING OF THE BOOTSTRAP COMPONENTS           
+
+   ========================================= 
+   
+    3 - TYPE
+    
+*/
+/*
+ * 3. TYPE  
+ */
+body {
+  font-family: Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+}
+
+a {
+  color: #2b90d9;
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  color: #1c669c;
+  text-decoration: underline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  margin-bottom: 0.5rem;
+  font-family: inherit;
+  font-weight: 700;
+  line-height: 1.2;
+  color: inherit;
+}
+
+h1,
+.h1 {
+  font-size: 2.5rem;
+}
+
+h2,
+.h2 {
+  font-size: 2rem;
+}
+
+h3,
+.h3 {
+  font-size: 1.75rem;
+}
+
+h4,
+.h4 {
+  font-size: 1.5rem;
+}
+
+h5,
+.h5 {
+  font-size: 1.25rem;
+}
+
+h6,
+.h6 {
+  font-size: 1rem;
+}
+
+.lead {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.display-1 {
+  font-size: 6rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.display-2 {
+  font-size: 5.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.display-3 {
+  font-size: 4.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.display-4 {
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+hr {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+small,
+.small {
+  font-size: 80%;
+  font-weight: 400;
+}
+
+mark,
+.mark {
+  padding: 0.2em;
+  background-color: #fcf8e3;
+}
+
+.blockquote {
+  padding: 0.5rem 1rem;
+  margin-bottom: 2rem;
+  font-size: 1.25rem;
+  border-left: 5px solid #2b90d9;
+}
+
+.blockquote-footer {
+  color: #6c757d;
+}
+
+.blockquote-footer::before {
+  content: "\2014 \00A0";
+}
+
+.text-primary {
+  color: #2b90d9 !important;
+}
+
+a.text-primary:hover, a.text-primary:focus {
+  color: #2074b1 !important;
+}
