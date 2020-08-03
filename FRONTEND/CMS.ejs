@@ -1,0 +1,99 @@
+<html>
+    
+    <head>
+        <title>Central Monitoring System</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <script src="/blockchain/web3.min.js"></script>
+        
+
+
+    </head>
+
+    <body class="w3-sand">
+        <br>
+        <h1 style="text-align: center;">Central Monitoring System</h1>
+        <br><hr><br>
+        
+        <div class="container cms_table">
+            <style>
+                .cms_table {
+                    overflow-x : auto;
+                    width : 100%;
+                    height : 60%;
+                }
+            </style>
+
+            <table class="table table-bordered table-hover w3-pale-yellow" id="table1">
+                <thead>
+                    <tr>
+                        <th>Application ID</th>
+                        <th>Date</th>
+                        <th>Signatory</th>
+                        <th>Ethereum Address</th>
+                        <th>Action done</th>
+                        <th>Transaction Hash</th>
+                    </tr>
+                </thead>
+                
+                <tbody id="events">
+                    <!-- Sample data added. -->
+                
+
+                   
+
+                
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <br><hr><br>
+        <input type="button" class="btn btn-success" value="Go Back" onclick="history.back(-1)" />
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script  src="/blockchain/contract.js"></script>
+        <script>
+var content=document.getElementById('events');
+async function getevents(){
+    const results = await KMPcontract.getPastEvents('centralMonitoring',{fromBlock:0});
+            console.log(results);
+            for(var i=0;i<results.length;i++){
+                content.innerHTML+=`<tr>
+                        <td id="id">`+results[i].returnValues.applicationId+`</td>
+                        <td id="date">`+new Date(results[i].returnValues.date/1000)+`</td>
+                        <td id="signatory">`+results[i].returnValues.signatory+`</td>
+                        <td id="eth_address">`+results[i].returnValues.ethAddress+`</td>
+                        <td id="action_done">`+results[i].returnValues.action+`</td>
+                        <td id="action_done">`+results[i].transactionHash+`</td>
+                    </tr>`
+            }
+}
+getevents();
+        </script>
+
+
+
+
+        
+        
+            
+
+
+
+            
+
+      
+            
+
+
+
+
+
+
+    </body>
+</html>
