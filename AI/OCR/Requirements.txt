@@ -1,0 +1,5 @@
+json5==0.8.5
+jsonschema==3.0.2
+boto3==1.14.2
+pdf2image==1.13.1
+pytest-shutil==1.7.0
