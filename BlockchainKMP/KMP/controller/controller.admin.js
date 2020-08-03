@@ -1,14 +1,18 @@
 var express = require('express');
 var applicationsDB=require('../models/application');
 var userdb=require('../models/usersdb');
+var fs = require('fs');
 const { json } = require('body-parser');
 var spawn = require("child_process").spawn; 
+const IPFS = require('ipfs-api');
+//ipfs config
+const ipfs = new IPFS({ host: 'ipfs.infura.io', port: 5001, protocol: 'https'});
+var deletedb=require('../models/delete');
+
 function newLicense(){
        let randomNum = Math.random() * ((new Date()/1000) - 1) + 1;
        return "AAI-LICENSE-"+Math.floor(randomNum+(new Date()/1000));
 }
-
-
 
 function getdate(){
 var today = new Date();
@@ -192,7 +196,7 @@ issueLicense:function(req,res){
                      if(err) res.json({status:false});
                      else
                      {console.log("working");
-                            if(true){
+                            if(application.approval_DOAS=="Accepted" && application.approval_AI=="Accepted" && application.approval_DG=="Accepted"){
                                    var l=newLicense();
                                    application.licenseIssued=l;
                                    application.save();
@@ -222,7 +226,7 @@ generateCertificate:function(req,res){
                      if(err) res.json({status:false});
                      else
                      {
-                            if(application.approval_DOAS=="Approved" && application.approval_AI=="Approved" && application.approval_DG=="Approved"
+                            if(application.approval_DOAS=="Accepted" && application.approval_AI=="Accepted" && application.approval_DG=="Accepted"
                             && application.licenseIssued!=="Not Issued"){
                                   
                                    var process = spawn('python',["./public/certificate_script/certificate.py",application.aerodrome_category,application._id,application.licenseIssued,
@@ -232,8 +236,22 @@ generateCertificate:function(req,res){
                                    var d=JSON.parse(data.toString());
                                    console.log(d);
                                    if(d.status){
-                                          
+                                          // let ipfsfilen = fs.readFileSync('../public/All_Licenses/License_'+application._id);
+                                          // let ipfsbuffer = new Buffer(ipfsfilen);
+                                          // var hash="";
+                                          // ipfs.files.add(ipfsbuffer, function (err, file) {
+                                          //   if (err) {
+                                          //    throw err;
+                                          //   }
+                                          //   console.log(file);
+                                          //   hash=file[0].hash;
+                                          //   application.licenseHash=hash;
+                                          //   application.save();
+                                            
+                                          // });
+                                      
                                           res.json({status:true});
+                                          
                                    }else
                                    {    
                                           res.json({status:false});
@@ -311,10 +329,28 @@ applicationsDB.findById(id,(err,app)=>{
                                           resu.applications.pull(id);
                                           resu.save();
 
-                                          applicationsDB.findByIdAndRemove(id, (err,result)=>{
-                                                 if(err) throw err;
-                                                 res.redirect('/admin/doas/dashboard');
+                                          deletedb.find({name:"deletedb"},(err,resl)=>{
+                                                 console.log(resl);
+                                                 if(resl!=[]){
+                                                        var d=new deletedb({
+                                                               name:"deletedb"
+                                                        });
 
+                                                        d.deletedapplications.push(id);
+                                                        d.save();
+                                                        res.redirect('/admin/doas/dashboard');
+
+                                                 }
+                                                 else
+                                                 {
+                                                        console.log(resl[0]);
+                                                        resl[0].deletedapplications.push(id);
+                                                        resl.save();
+                                                        
+
+                                                 }
+                                        
+                                          
                                           });
                                           
                                    });
@@ -333,7 +369,73 @@ applicationsDB.findById(id,(err,app)=>{
        
 
 });
+},
+
+
+
+archiveapplication:function(req,res){
+
+       var id=req.params.id;
+       userdb.findById(req.session.user,(err,resu)=>{
+              if(err) throw err;
+              console.log(resu);
+              resu.applications.pull(id);
+              resu.archiveApplications.push(id);
+              resu.save();
+              res.redirect('/admin/'+req.session.access+'/dashboard');
+
+       });
+
+
+
+},
+archivepage:function(req,res){
+
+       var id=req.params.id;
+       userdb.findById(req.session.user,(err,resu)=>{
+              if(err) throw err;
+              console.log(resu);
+              res.render('archive_page',{id:req.session.user,userApplications:resu.archiveApplications});
+
+       });
+
+
+
+},
+
+deletepage:function(req,res){
+
+       
+       deletedb.find({name:"deletedb"},(err,resu)=>{
+              if(err) throw err;
+              console.log(resu[0]);
+              res.render('delete_page',{id:req.session.user,userApplications:resu[0].deletedapplications});
+
+       });
+
+
+
+},
+
+
+
+restorearchive:function(req,res){
+
+       var id=req.params.id;
+       userdb.findById(req.session.user,(err,resu)=>{
+              if(err) throw err;
+              console.log(resu);
+              resu.applications.push(id);
+              resu.archiveApplications.pull(id);
+              resu.save();
+              res.redirect('/admin/'+req.session.access+'/dashboard');
+
+       });
+
+
 }
+
+
     
     
     

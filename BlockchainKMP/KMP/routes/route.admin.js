@@ -29,6 +29,10 @@ router.get('/senddg/:id',adminController.checkClientLoggedIn,adminController.ass
 router.get('/issuelicense/:id',adminController.checkClientLoggedIn,adminController.issueLicense);
 router.get('/generatecertificate/:id/:hash',adminController.checkClientLoggedIn,adminController.generateCertificate);
 router.get('/deleteapplication/:id',adminController.checkClientLoggedIn,adminController.deleteApplication);
+router.get('/archiveapplication/:id',adminController.checkClientLoggedIn,adminController.archiveapplication);
+router.get('/archivepage/:id',adminController.checkClientLoggedIn,adminController.archivepage);
+router.get('/restorearchive/:id',adminController.checkClientLoggedIn,adminController.restorearchive);
+router.get('/deletepage',adminController.checkClientLoggedIn,adminController.deletepage);
 
 
 module.exports = router;

@@ -67,7 +67,7 @@ async function getevents(){
             for(var i=0;i<results.length;i++){
                 content.innerHTML+=`<tr>
                         <td id="id">`+results[i].returnValues.applicationId+`</td>
-                        <td id="date">`+new Date(results[i].returnValues.date/1000)+`</td>
+                        <td id="date">`+new Date(results[i].returnValues.date*1000)+`</td>
                         <td id="signatory">`+results[i].returnValues.signatory+`</td>
                         <td id="eth_address">`+results[i].returnValues.ethAddress+`</td>
                         <td id="action_done">`+results[i].returnValues.action+`</td>

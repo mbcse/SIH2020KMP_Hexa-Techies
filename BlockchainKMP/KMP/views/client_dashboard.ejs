@@ -403,9 +403,12 @@
                 var df,hm,lo,am;
                 
 
+
+                if(data.ministry_defence && data.licenseIssued!=="Not Issued")
+                    df="<td> <span class='label label-success'> Uploaded </span> </td>";
                 
-                if(data.ministry_defence)
-                    df=`<td> Uploaded <form enctype="multipart/form-data" onsubmit="event.preventDefault();uploadDocs(this, '/client/uploaddfapproval/`+data._id+`','`+data._id+`')" id="uploadDF" method="post">
+                else if(data.ministry_defence)
+                    df=`<td> <span class='label label-success'> Uploaded </span> <form enctype="multipart/form-data" onsubmit="event.preventDefault();uploadDocs(this, '/client/uploaddfapproval/`+data._id+`','`+data._id+`')" id="uploadDF" method="post">
                                     <input id="fileudl" type="file" name='filedf' />
                                     <input type="submit" value="ReUpload">
                                 </form></td>`;
@@ -417,28 +420,48 @@
                                 </form>
                         </td>`;
 
-                if(data.ministry_home )
-                    hm="<td> Uploaded </td>";
+
+                if(data.ministry_home && data.licenseIssued!=="Not Issued")
+                    hm="<td> <span class='label label-success'> Uploaded </span> </td>";  
+
+                else if(data.ministry_home )
+                    hm=`<td> <span class='label label-success'> Uploaded </span> <form enctype="multipart/form-data" onsubmit="event.preventDefault();uploadDocs(this, '/client/uploadhmapproval/`+data._id+`','`+data._id+`')"  id="uploadHM" method="post">
+                                    <input id="fileudl" type="file" name='filehm' />
+                                    <input type="submit" value="ReUpload">
+                                </form></td>`;
                 else
-                 hm=` <td>
+                    hm=` <td>
                                 <form enctype="multipart/form-data" onsubmit="event.preventDefault();uploadDocs(this, '/client/uploadhmapproval/`+data._id+`','`+data._id+`')"  id="uploadHM" method="post">
                                     <input id="fileudl" type="file" name='filehm' />
                                     <input type="submit" value="Upload">
                                 </form>
                             </td>`;
-                if(data.aerodrome_manual)
-                    am="<td> Uploaded </td>";
+
+
+                if(data.aerodrome_manual && data.licenseIssued!=="Not Issued")
+                    am="<td> <span class='label label-success'> Uploaded </span> </td>"; 
+                else if(data.aerodrome_manual)
+                    am=`<td> <span class='label label-success'> Uploaded </span>  <form enctype="multipart/form-data" onsubmit="event.preventDefault();uploadDocs(this, '/client/uploadam/`+data._id+`','`+data._id+`')" id="uploadAM" method="post">
+                                    <input id="fileudl" type="file" name='fileam' />
+                                    <input type="submit" value="ReUpload">
+                                </form> </td>`;
                 else  
-                 am= ` <td>
+                    am= ` <td>
                                 <form enctype="multipart/form-data" onsubmit="event.preventDefault();uploadDocs(this, '/client/uploadam/`+data._id+`','`+data._id+`')" id="uploadAM" method="post">
                                     <input id="fileudl" type="file" name='fileam' />
                                     <input type="submit" value="Upload">
                                 </form>
                             </td>`;
-                if(data.landowner_approval)
-                    lo="<td> Uploaded </td>"; 
+
+                if(data.landowner_approval && data.licenseIssued!=="Not Issued")
+                    lo="<td> <span class='label label-success'> Uploaded </span> </td>"; 
+                else if(data.landowner_approval)
+                    lo=`<td> <span class='label label-success'> Uploaded </span>  <form enctype="multipart/form-data" onsubmit="event.preventDefault();uploadDocs(this, '/client/uploadloapproval/`+data._id+`','`+data._id+`')" id="uploadLO" method="post">
+                                    <input id="fileudl" type="file" name='filelo' />
+                                    <input type="submit" value="ReUpload">
+                                </form> </td>`; 
                 else
-                lo=`  <td>
+                    lo=`  <td>
                                 <form enctype="multipart/form-data" onsubmit="event.preventDefault();uploadDocs(this, '/client/uploadloapproval/`+data._id+`','`+data._id+`')" id="uploadLO" method="post">
                                     <input id="fileudl" type="file" name='filelo' />
                                     <input type="submit" value="Upload">

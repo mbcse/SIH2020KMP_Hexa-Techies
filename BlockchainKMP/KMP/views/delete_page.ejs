@@ -22,7 +22,6 @@
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-
     
 <![endif]-->
 <script src="/blockchain/web3.min.js"></script>
@@ -30,43 +29,6 @@
 </head>
 
 <body>
-    	  <!-- Modal -->
-          <div class="modal fade" id="grantaccess"  tabindex="-2" role="dialog" aria-labelledby="adminaccessModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="adminaccessModalLabel">Notice</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                    <h5 id="Tmessage" >You Are Granting Admin Access To Ethereum Address, Please Enter address and Click Grant Access</h5>
-                    <div class="container" id="TstatusBar">
-                     
-                        <div id="toaddressinputdiv">
-                        Address:&nbsp;<input type="text" name="toAddress" id="toAddress">
-                        </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal" id="Tcancel" style="display: block;">Cancel</button>
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal" style="display: none;" id="Tclose">close</button>
-                  <button type="button" class="btn btn-primary" id="grant" style="display: block;">Grant Access</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-            <!-- Modal End -->
-
-
-
-
-
-
-
-
-
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
     <!-- ============================================================== -->
@@ -157,56 +119,7 @@
         <!-- ============================================================== -->
         <!-- End Topbar header -->
         <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Left Sidebar - style you can find in sidebar.scss  -->
-        <!-- ============================================================== -->
-        <aside class="left-sidebar" data-sidebarbg="skin6">
-            <!-- Sidebar scroll-->
-            <div class="scroll-sidebar">
-                <!-- Sidebar navigation-->
-                <nav class="sidebar-nav">
-                    <ul id="sidebarnav">
-                        <!-- User Profile-->
-                        <li>
-                            <!-- User Profile-->
-                            <div class="user-profile d-flex no-block dropdown m-t-20">
-                                <div class="user-pic"><img src="/dashboard/assets/images/users/1.jpg" alt="users" class="rounded-circle" width="40" /></div>
-                                <div class="user-content hide-menu m-l-10">
-                                    <a href="javascript:void(0)" class="" id="Userdd" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <h5 class="m-b-0 user-name font-medium"><%=name%><i class="fa fa-angle-down"></i></h5>
-                                        <span class="op-5 user-email"><%=email%></span>
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="Userdd">
-                                        <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
-                                        <a class="dropdown-item" href="javascript:void(0)"><i class="ti-wallet m-r-5 m-l-5"></i> My Balance</a>
-                                        <a class="dropdown-item" href="javascript:void(0)"><i class="ti-email m-r-5 m-l-5"></i> Inbox</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="javascript:void(0)"><i class="ti-settings m-r-5 m-l-5"></i> Account Setting</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="/logout"><i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End User Profile-->
-                        </li>
-                        <li class="p-15 m-t-10"><a href="/admin/cms" class="btn btn-block create-btn text-white no-block d-flex align-items-center"><i class="fa fa-plus-square"></i> <span class="hide-menu m-l-5">Central Monitoring</span> </a></li>
-                        <!-- User Profile-->
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="" aria-expanded="false"><i class="mdi mdi-account-network"></i><span class="hide-menu">User Profile</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" data-toggle="modal" data-target="#grantaccess" href="" aria-expanded="false"><i class="mdi mdi-border-all"></i><span class="hide-menu">Grant Admin Access</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/deletepage" aria-expanded="false"><i class="mdi mdi-face"></i><span class="hide-menu">Deleted Applications</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/archivepage/<%=id%>" aria-expanded="false"><i class="mdi mdi-file"></i><span class="hide-menu">Archived Applications</span></a></li>
-                   
-                    </ul>
-                    
-                </nav>
-                <!-- End Sidebar navigation -->
-            </div>
-            <!-- End Sidebar scroll-->
-        </aside>
-        <!-- ============================================================== -->
-        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
-        <!-- ============================================================== -->
+        
         <!-- ============================================================== -->
         <!-- Page wrapper  -->
         <!-- ============================================================== -->
@@ -217,12 +130,12 @@
             <div class="page-breadcrumb">
                 <div class="row align-items-center">
                     <div class="col-5">
-                        <h4 class="page-title">Dashboard</h4>
+                        <h4 class="page-title">Deleted Applications</h4>
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Overview</li>
+                                    <li class="breadcrumb-item"><a href="#">Applications</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Will Remain here for period of 90 days</li>
                                 </ol>
                             </nav>
                         </div>
@@ -250,6 +163,7 @@
                                 <table class="table v-middle">
                                     <thead>
                                         <tr class="bg-light">
+                                            <!-- <th class="border-top-0">Restore</th> -->
                                             <th class="border-top-0">ApplicationId</th>
                                             <th class="border-top-0">Home Minister Approval</th>
                                             <th class="border-top-0">Defense Approval</th>
@@ -274,73 +188,7 @@
                 <!-- ============================================================== -->
                 <!-- Table -->
                 <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Recent comment and chats -->
-                <!-- ============================================================== -->
-                <div class="row">
-                    <!-- column -->
-                    <div class="col-lg-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Recent Comments</h4>
-                            </div>
-                            <div class="comment-widgets scrollable">
-                                <!-- Comment Row -->
-                                <div class="d-flex flex-row comment-row m-t-0">
-                                    <div class="p-2"><img src="/dashboard/assets/images/users/1.jpg" alt="user" width="50" class="rounded-circle"></div>
-                                    <div class="comment-text w-100">
-                                        <h6 class="font-medium">DG</h6>
-                                        <span class="m-b-15 d-block">Review application at the earliest </span>
-                                        <div class="comment-footer">
-                                            <span class="text-muted float-right">April 14, 2016</span> <span class="label label-rounded label-primary">Pending</span> <span class="action-icons">
-                                                    <a href="javascript:void(0)"><i class="ti-pencil-alt"></i></a>
-                                                    <a href="javascript:void(0)"><i class="ti-check"></i></a>
-                                                    <a href="javascript:void(0)"><i class="ti-heart"></i></a>    
-                                                </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Comment Row -->
-                                <div class="d-flex flex-row comment-row">
-                                    <div class="p-2"><img src="/dashboard/assets/images/users/1.jpg" alt="user" width="50" class="rounded-circle"></div>
-                                    <div class="comment-text active w-100">
-                                        <h6 class="font-medium">DOAS</h6>
-                                        <span class="m-b-15 d-block">Aerodrome Manual Not updated</span>
-                                        <div class="comment-footer ">
-                                            <span class="text-muted float-right">April 14, 2016</span>
-                                            <span class="label label-success label-rounded">Approved</span>
-                                            <span class="action-icons active">
-                                                    <a href="javascript:void(0)"><i class="ti-pencil-alt"></i></a>
-                                                    <a href="javascript:void(0)"><i class="icon-close"></i></a>
-                                                    <a href="javascript:void(0)"><i class="ti-heart text-danger"></i></a>    
-                                                </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Comment Row -->
-                                <div class="d-flex flex-row comment-row">
-                                    <div class="p-2"><img src="/dashboard/assets/images/users/1.jpg" alt="user" width="50" class="rounded-circle"></div>
-                                    <div class="comment-text w-100">
-                                        <h6 class="font-medium">AI</h6>
-                                        <span class="m-b-15 d-block">Update Security </span>
-                                        <div class="comment-footer">
-                                            <span class="text-muted float-right">April 14, 2016</span>
-                                            <span class="label label-rounded label-danger">Rejected</span>
-                                            <span class="action-icons">
-                                                    <a href="javascript:void(0)"><i class="ti-pencil-alt"></i></a>
-                                                    <a href="javascript:void(0)"><i class="ti-check"></i></a>
-                                                    <a href="javascript:void(0)"><i class="ti-heart"></i></a>    
-                                                </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>   
-                <!-- ============================================================== -->
-                <!-- Recent comment and chats -->
-                <!-- ============================================================== -->
+                
             </div><!--extra can remove -->
             <!-- ============================================================== -->
             <!-- End Container fluid  -->
@@ -381,9 +229,11 @@
     <script src="/dashboard/assets/libs/chartist/dist/chartist.min.js"></script>
     <script src="/dashboard/assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
     <script src="/dashboard/dist/js/pages/dashboards/dashboard1.js"></script>
+
+
     <script>
-    function httpGetApplicationDetails(id,cb){
-        var xmlHttp = new XMLHttpRequest();
+function httpGetApplicationDetails(id,cb){
+    var xmlHttp = new XMLHttpRequest();
         xmlHttp.open( "GET", '/client/getapplicationdetails/'+id, false ); // false for synchronous request
         xmlHttp.send( null );
         cb(JSON.parse(xmlHttp.responseText));
@@ -422,6 +272,9 @@ window.onload=()=>{
                 lo="<td> Not Uploaded </td>";   
                 console.log(hm,df,lo,am);
                 applications.innerHTML+= ` <tr>
+
+
+
                             <td>
                                 <div class="d-flex align-items-center">
                                     <a class="m-b-0 font-16" href="/admin/applicationdetails/`+data._id+`" id="applicationID">`+data._id+`</a>
@@ -445,21 +298,7 @@ window.onload=()=>{
         
   
         
-        
-    document.getElementById('grant').addEventListener('click',()=>{
-
-        var address=document.getElementById('toAddress').value;
-        document.getElementById('Tmessage').innerHTML="Granting Access......";
-        document.getElementById('TstatusBar').style.display="none";
-        KMPcontract.methods.grantAdminAccess(address).send({from:userAccount},(err,txh)=>{})
-        .on('receipt',(tx)=>{
-
-            document.getElementById('Tmessage').innerHTML="Access Granted Successfully!";
-            document.getElementById('grant').style.display="none";
-            document.getElementById('Tclose').style.display="block";
-            
-        });
-    })  ;                                  
+                              
   
         
 
@@ -467,11 +306,15 @@ window.onload=()=>{
 
 
 }
-    
-    </script>
 
- 
+</script>
 
 </body>
 
 </html>
+
+<!-- <td>
+    <div class="d-flex align-items-center">
+        <a class="m-b-0 font-16" href="/admin/restorearchive/`+data._id+`" id="restoreID">Restore</a>
+    </div>
+</td> -->

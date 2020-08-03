@@ -35,7 +35,8 @@ const application = new Schema ({
         approval_DG : {type:String, default:"Pending"},
         licenseIssued:{type:String, default:"Not Issued"},
         comments:{type:[Object], default:null},
-        feeAmount:String
+        feeAmount:String,
+        licenseHash:{type:String, default:null}
 });
 
 module.exports = mongoose.model('Application', application)

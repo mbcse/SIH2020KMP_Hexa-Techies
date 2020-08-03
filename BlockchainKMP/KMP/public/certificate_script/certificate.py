@@ -13,7 +13,7 @@ try:
         location5=(1042,1334)
         location6=(510,1921)
         location7=(409,1960)
-        location8=(853,1930)
+        location8=(350,1750)
         text_color = (0,0,0)
         font = ImageFont.truetype("arial.ttf", 25)
         d.text(location0, sys.argv[2], fill=text_color,font=font)

@@ -332,6 +332,7 @@ font-family: 'Roboto';font-size: 15px;
                       <tr class="bg-light">
                           <th class="border-top-0">Approve Application</th>
                           <th class="border-top-0">Reject Application</th>
+                          <th class="border-top-0">Archive Application</th>
 
                   
                         
@@ -344,6 +345,7 @@ font-family: 'Roboto';font-size: 15px;
                       <h6>By Approving, you mean you have verified all the details and Confirming to Grant License to Applicant</h6>
                       </td>
                       <td><button class="btn-danger" onclick="rejectApplication()"  id="issuelicense">Reject</button></td>
+                      <td><a class="btn-danger btn-lg" href="/admin/archiveapplication/<%=data._id%>"  id="archiveApplication">Archive</button></a>
 
                   </tbody>
               </table>
@@ -427,6 +429,14 @@ font-family: 'Roboto';font-size: 15px;
     else   
       document.getElementById('lodoc').innerHTML="Not Uploaded";
     })
+
+    if(<%-JSON.stringify(data.licenseHash)%>!==null){
+      content.innerHTML+=`<div class="col-md-6">
+                <center>
+                <iframe src="https://gateway.ipfs.io/ipfs/`+<%-JSON.stringify(data.licenseHash)%>+`" frameborder="0" style="overflow:hidden;height:300px;" width="100%" height="580"></iframe>
+                </center>
+                </div>`
+    }
 
     
     document.getElementById('approve').addEventListener('click',()=>{

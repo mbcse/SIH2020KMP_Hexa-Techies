@@ -318,9 +318,9 @@ font-family: 'Roboto';font-size: 15px;
 </div>
 </div>
 
-
-<a href="/client/updateapplication/<%=data._id%>" class="btn-success">Update Application</a>
-    
+<center>
+<a href="/client/updateapplication/<%=data._id%>" class="btn-success btn-lg">Update Application</a>
+</center>
   </main>
   <!--Main layout-->
 
@@ -393,6 +393,16 @@ font-family: 'Roboto';font-size: 15px;
     else   
       document.getElementById('lodoc').innerHTML="Not Uploaded";
     })
+
+
+
+    if(<%-JSON.stringify(data.licenseHash)%>!==null){
+      content.innerHTML+=`<div class="col-md-6">
+                <center>
+                <iframe src="https://gateway.ipfs.io/ipfs/`+<%-JSON.stringify(data.licenseHash)%>+`" frameborder="0" style="overflow:hidden;height:300px;" width="100%" height="580"></iframe>
+                </center>
+                </div>`
+    }
     
     
    }

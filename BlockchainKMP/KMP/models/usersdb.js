@@ -38,7 +38,8 @@ var users=new Schema({
         type:String,
         required:true
     },
-    applications:[String]
+    applications:[String],
+    archiveApplications:[String]
 });
 
 

@@ -10,7 +10,6 @@ router.get('/newapplication',clientController.checkClientLoggedIn, function(req,
 });
 
 router.post('/aerodromeapplication', clientController.checkClientLoggedIn, clientController.newApplication);
-router.post('/updateaerodromeapplication', clientController.checkClientLoggedIn, clientController.newApplication);
 
 router.get('/getapplicationdetails/:aid',clientController.checkClientLoggedIn, clientController.getApplicationDetails);
 

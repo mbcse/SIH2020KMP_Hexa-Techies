@@ -236,7 +236,7 @@
                     <label class="radio-inline"> <input type="radio" name="onwerAerodrome_2" id="onwerAerodrome_2" value="NO"  style="margin-bottom: 10px">NO </label>
             </div>
        
-      
+        </div>
 
        
         <div id="aerdromeLongitude" class="form-group required"> 
@@ -249,232 +249,26 @@
             <label for="aerodromeLatitude" class="control-label  requiredField">Latitude of the
                     place in six digits </label> 
             <div class="controls"> 
-                <input class="input-md   form-control" id="aerodromeLatitude" value="<%= data.latitude %>" name="aerodromeLatitude" placeholder="" style="margin-bottom: 10px" type="text" />
+                <input class="input-md   form-control" id="aerodromeLatitude" value="<%=data.latitude %>" name="aerodromeLatitude" placeholder="" style="margin-bottom: 10px" type="text" />
             </div>
         </div>
 
 
-
-        <h2>AERODROME MANGEMENT PERSONNEL</h2>
-        <h3>Board Member/ Managing Director or person having specific responsibility for safety. </h3>
-        <h4>(To be completed only where the applicant is a company/ corporate/society)</h4> 
-
-        <div id="companyHead" class="form-group required"> 
-            <label for="companyHead" class="control-label   requiredField"> Name  </label> 
-            <div class="controls    "> 
-                <input class="input-md   form-control" id="companyHead" value="<%= data.name_of_directors.head.name %>" name="companyHead" placeholder="" style="margin-bottom: 10px" type="text" />
-            </div>
-        </div>   
-
-        <div id="companyHeadStatus" class="form-group required"> 
-            <label for="companyHeadStatus" class="control-label   requiredField"> Status/ Designation   </label> 
-            <div class="controls    "> 
-                <input class="input-md   form-control" id="companyHeadStatus" value="<%= data.name_of_directors.head.status %>" name="companyHeadStatus" placeholder="" style="margin-bottom: 10px" type="text" />
-            </div>
-        </div> 
-          
-        <div class="form-group   ">
-            <label for="companyHeadPhone">Telephone Number</label> 
-            <input type="tel" id="companyHeadPhone" name="companyHeadPhone" value="<%= data.name_of_directors.head.phone %>" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
         </div>
-
-        <h3>The person in charge of day to day operation of aerodrome. </h3>
-        <div class="form-group required"> 
-            <label for="aerodromeOperationHead" class="control-label   requiredField"> Name  </label> 
-            <div class="controls    "> 
-                <input class="input-md   form-control" id="aerodromeOperationHead" value="<%= data.name_of_directors.operationhead.name %>" name="aerodromeOperationHead" placeholder="" style="margin-bottom: 10px" type="text" />
-            </div>
+ 
+       
         </div>
-
-        <div class="form-group required"> 
-            <label for="aerodromeOperationHeadStatus" class="control-label   requiredField"> Status/ Designation   </label> 
-            <div class="controls    "> 
-                <input class="input-md   form-control" id="aerodromeOperationHeadStatus" value="<%= data.name_of_directors.operationhead.status %>" name="aerodromeOperationHeadStatus" placeholder="" style="margin-bottom: 10px" type="text" />
-            </div>
-        </div>
-
-        <div class="form-group   ">
-            <label for="aerodromeOperationHeadPhone">Telephone Number:</label>
-            <input type="tel" id="aerodromeOperationHeadPhone" name="aerodromeOperationHeadPhone" value="<%= data.name_of_directors.operationhead.phone %>" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
-        </div>
-
-        <!-- <h3>The person responsible for Aerodrome Safety. If different from above (Please enclose a current Curriculum Vitae [CV]) </h3> -->
-        <div  class="form-group required"> 
-            <label for="aerodromeSafetyHead" class="control-label   requiredField"> Name  </label> 
-            <div class="controls    "> 
-                <input class="input-md   form-control" value="<%= data.name_of_directors.atmhead.name
-                %>" id="aerodromeSafetyHead" name="aerodromeSafetyHead" placeholder="" style="margin-bottom: 10px" type="text" />
-            </div>
-        </div>    
-        <div  class="form-group required"> 
-            <label for="aerodromeSafetyHeadStatus" class="control-label  requiredField"> Status/ Designation   </label> 
-            <div class="controls    "> 
-                <input class="input-md   form-control" value="<%= data.name_of_directors.atmhead.status %>" id="aerodromeSafetyHeadStatus" name="aerodromeSafetyHeadStatus" placeholder="" style="margin-bottom: 10px" type="text" />
-            </div>
-        </div>
-
-        <div class="form-group   ">
-            <label for="aerodromeSafetyHeadPhone">Telephone Number:</label>
-            <input type="tel" id="aerodromeSafetyHeadPhone" name="aerodromeSafetyHeadPhone" value="<%= data.name_of_directors.atmhead.phone %>" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
-        </div>
-
-        <h3>Provider of the CNS - ATM </h3>
-        <div  class="form-group required"> 
-            <label for="aerodromeAtmProvider" class="control-label   requiredField"> Name  </label> 
-            <div class="controls    "> 
-                <input class="input-md   form-control" id="aerodromeAtmProvider" value="<%= data.name_of_directors.atmprovider.name %>" name="aerodromeAtmProvider" placeholder="" style="margin-bottom: 10px" type="text" />
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="aerodromeAtmProviderAddress">Address </label> 
-            <input type="text" class="form-control" id="aerodromeAtmProviderAddress"  name="aerodromeAtmProviderAddress" value="<%= data.name_of_directors.atmprovider.address %>" placeholder="">
-        </div>
-
-        <h3>Provider of the MET services </h3>
-        <div  class="form-group required"> 
-            <label for="aerodromeMetProvider" class="control-label   requiredField"> Name  </label> 
-            <div class="controls    "> 
-                <input class="input-md   form-control" id="aerodromeMetProvider"  value="<%= data.name_of_directors.metprovider.name %>" name="aerodromeMetProvider" placeholder="" style="margin-bottom: 10px" type="text" />
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="aerodromeMetProviderAddress">Address </label>
-            <input type="text" class="form-control" id="aerodromeMetProviderAddress" name="aerodromeMetProviderAddress" value="<%= data.name_of_directors.metprovider.address %>" placeholder="">
-            </div>
-        </div>
-
-        <h3>The person responsible for overseeing the day to day provisions of the Air Traffic Management </h3>    
-        <div  class="form-group required"> 
-            <label for="aerodromeAtmHead" class="control-label   requiredField"> Name  </label> 
-            <div class="controls    "> 
-                <input class="input-md   form-control" id="aerodromeAtmHead" value="<%= data.name_of_directors.safetyhead.name %>" name="aerodromeAtmHead" placeholder="" style="margin-bottom: 10px" type="text" />
-            </div>
-        </div>
-
-        <div  class="form-group required"> 
-            <label for="aerodromeAtmHeadStatus" class="control-label   requiredField"> Status/ Designation   </label> 
-            <div class="controls    "> 
-                <input class="input-md   form-control" id="aerodromeAtmHeadStatus" value="<%= data.name_of_directors.safetyhead.status %>" name="aerodromeAtmHeadStatus" placeholder="" style="margin-bottom: 10px" type="text" />
-            </div>
-        </div>
-
-        <div class="form-group   ">
-            <label for="aerodromeAtmHeadPhone">Telephone Number:</label> 
-
-            <input type="tel" id="aerodromeAtmHeadPhone" name="aerodromeAtmHeadPhone" value="<%= data.name_of_directors.safetyhead.phone %>" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>  
-        </div>
-
-        <h3>The person responsible for overseeing the day to day provisions of CNS </h3> 
-        <div  class="form-group required"> 
-            <label for="aerodromeCnsHead" class="control-label  requiredField"> Name  </label> 
-            <div class="controls    "> 
-                <input class="input-md   form-control" id="aerodromeCnsHead" value="<%= data.name_of_directors.cnshead.name %>" name="aerodromeCnsHead" placeholder="" style="margin-bottom: 10px" type="text" />
-            </div>
-        </div>
-
-        <div  class="form-group required"> 
-            <label for="aerodromeCnsHeadStatus" class="control-label   requiredField"> Status/ Designation   </label> 
-            <div class="controls    "> 
-                <input class="input-md   form-control" id="aerodromeCnsHeadStatus"  value="<%= data.name_of_directors.cnshead.status %>" name="aerodromeCnsHeadStatus" placeholder="" style="margin-bottom: 10px" type="text" />
-            </div>
-        </div>
-
-        <div class="form-group   ">
-            <label for="aerodromeCnsHeadPhone">Telephone Number:</label>
-
-            <input type="tel" id="aerodromeCnsHeadPhone" name="aerodromeCnsHeadPhone" value="<%= data.name_of_directors.cnshead.phone %>"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>  
-        </div>
-
-        <h3>The person responsible for overseeing the day to day provisions of RFF  </h3> 
-        <div class="form-group required"> 
-            <label for="aerodromeRffHead" class="control-label   requiredField"> Name  </label> 
-            <div class="controls    "> 
-                <input class="input-md   form-control" id="aerodromeRffHead" value="<%= data.name_of_directors.rffhead.name %>" name="aerodromeRffHead" placeholder="" style="margin-bottom: 10px" type="text" />
-            </div>
-        </div>
-
-        <div class="form-group required"> 
-            <label for="aerodromeRffHeadStatus" class="control-label  requiredField"> Status/ Designation   </label> 
-            <div class="controls    "> 
-                <input class="input-md   form-control" value="<%= data.name_of_directors.rffhead.status %>" id="aerodromeRffHeadStatus" name="aerodromeRffHeadStatus" placeholder="" style="margin-bottom: 10px" type="text" />
-            </div>
-        </div>
-
-        <div class="form-group   ">
-            <label for="aerodromeRffHeadPhone">Telephone Number:</label>
-            <input type="tel" id="aerodromeRffHeadPhone" name="aerodromeRffHeadPhone" value="<%= data.name_of_directors.rffhead.phone %>" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>  
-        </div>
-
-        <h3>The person responsible for overseeing the day to day provisions of MET services</h3>
-        <div  class="form-group required"> 
-            <label for="aerodromeMetHead" class="control-label   requiredField"> Name  </label> 
-            <div class="controls    "> 
-                <input class="input-md   form-control" id="aerodromeMetHead" value="<%= data.name_of_directors.methead.name %>" name="aerodromeMetHead" placeholder="" style="margin-bottom: 10px" type="text" />
-            </div>
-        </div>
-
-        <div  class="form-group required"> 
-            <label for="aerodromeMetHeadStatus" class="control-label   requiredField"> Status/ Designation   </label> 
-            <div class="controls    "> 
-                <input class="input-md   form-control" value="<%= data.name_of_directors.methead.status %>" id="aerodromeMetHeadStatus" name="aerodromeMetHeadStatus" placeholder="" style="margin-bottom: 10px" type="text" />
-            </div>
-        </div>
-
-        <div class="form-group   ">
-            <label for="aerodromeMetHeadPhone">Telephone Number:</label>
-            <input type="tel" id="aerodromeMetHeadPhone" value="<%= data.name_of_directors.methead.phone %>" name="aerodromeMetHeadPhone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>   
-        </div>
-
+        
+    </form>
+       
     
-
-        <h2>PROJECT DETAILS</h2>
-        <div class="form-group   ">
-            <label for="totalProjectCost">Total Project Cost</label>
-            <input class="input-md   form-control" id="totalProjectCost" value="<%= data.name_of_directors.name %>" name="totalProjectCost" placeholder="" style="margin-bottom: 10px" type="text" />   
-        </div>
-
-
-        <h2>DETAILS OF FEES</h2>
-        <div id="feeDetail" class="form-group required"> 
-            <label for="feeDetail" class="control-label  requiredField">Challan No. for online deposit</label> 
-            <div class="controls    "> 
-                <input class="input-md   form-control" id="feeDetail" value="<%= data.name_of_directors.name %>" name="feeDetail" placeholder="" style="margin-bottom: 10px" type="text" />
+    </div>
+        </div>        
+      
+        
+        <div class="container">
+            <input type="submit" class="btn btn-success" value="Submit">
             </div>
-        </div>
-
-        <div class="form-group required"> 
-            <label for="feeAmount" class="control-label   requiredField">Amount (Attach a sheet showing the calculation of amount as per runway length)   </label> 
-            <div class="controls    "> 
-                <input class="input-md   form-control" id="feeAmount" value="<%= data.name_of_directors.name %>" name="feeAmount" placeholder="" style="margin-bottom: 10px" type="text" />
-            </div>
-        </div>
-
-        <div class="form-group required"> 
-            <label for="feeDetails" class="control-label   requiredField">Date & name of the drawee bank</label> 
-            <div class="controls    "> 
-                <input class="input-md   form-control" id="feeDetails" value="<%= data.name_of_directors.name %>" name="feeDetails" placeholder="" style="margin-bottom: 10px" type="text" />
-            </div>
-        </div>
-
-            
-        <div class="form-group">
-            <div class="controls ">
-                <div id="certify" class="checkbox required">
-                    <label for="certify" class=" requiredField">
-                            <input class="input-ms checkboxinput" id="certify" name="terms" style="margin-bottom: 10px" type="checkbox" />
-                            I hereby certify that the forgoing information is correct in every respect and no relevant information has been withheld. 
-                            <div class="container"> 
-                                <input type="submit" class="btn btn-success" value="Submit">
-                            </div>
-                    </label>
-                </div>         
-            </div>
-        </div> 
-    </form>    
-
-     
 
 
                 <a href="/client/dashboard" class="btn btn-success" value="Go Back">Go BAck</a>
@@ -547,23 +341,6 @@
                     progressInterval = setInterval(updatebar, 1500);
                     
                 }
-
-
-       
-       
-               
-        
-
-        
-  
-        
-        
-    
-
-
-
-
-        
 
 
 
