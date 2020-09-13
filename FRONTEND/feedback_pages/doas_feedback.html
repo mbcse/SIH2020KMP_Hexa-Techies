@@ -1,0 +1,132 @@
+<html>
+    <head>
+        <title>Client Feedback</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    </head>
+
+    <body class="w3-sand">
+        <h1><center>D.O.A.S Feedback Portal : AAI</center></h1>
+        <br><hr><br>
+
+        <div class="container-fluid">
+            <div class="float-left">
+                <div class="w3-container">
+                    <h3 style="text-align: center;">Send a Reply</h3>
+                    <br>
+                    <div class="w3-card-4" style="width:100%;">
+                        <header class="w3-container w3-light-grey">
+                            <h3>Application ID : &nbsp;&nbsp; <span id="app_id">E18CSE095</span></h3>
+                        </header>
+                        <br>
+                        <div class="w3-container">
+                            <p>Message Addressed To : &nbsp; &nbsp;
+                            <select name="to" id="to">
+                                <option value="AI">Applicant</option>
+                                <option value="DOAS">Aerodrome Inspector</option>
+                                <option value="DG">Directorate General</option>
+                            </select>
+                            </p>
+                            
+                            <p>Severity/Priority : &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                <select name="priority" id="priority">
+                                    <option value="LOW">LOW</option>
+                                    <option value="MEDIUM">MEDIUM</option>
+                                    <option value="HIGH">HIGH</option>
+                                </select>
+                            </p>
+
+                            <p>Title : &nbsp;
+                                <input type="text" id="msg_title" placeholder="Enter Title"/>
+                            </p>
+                            <p>Feedback : </p>
+                            <textarea id="message" placeholder="Enter your comments !" rows="5" cols="50"></textarea>
+                            <br>
+                            <hr>
+
+                        </div>
+                        <button class="w3-button w3-block w3-dark-grey">Send</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="float-right">
+                <h3 style="text-align: center;">Previous Conversations</h3>
+                <br>
+                <div class="dscroll">
+                    <style>
+                        .dscroll {
+                            overflow : auto;
+                            height : 450px;
+                            width : 550px;
+                        }
+                    </style>
+
+                    <!-- This is Comment Box 1 -->
+                    <div class="w3-container">
+                        
+                        <div class="w3-card-4" style="width:100%;">
+                            <header class="w3-container w3-light-grey">
+                                <h5>Application ID : &nbsp; <span id="app_id">E18CSE095</span></h5>
+                            </header>
+                            <br>
+                            <div class="w3-container">
+                                <p>Severity/Priority : &nbsp;<span id="severity">High</span></p>
+                                <p>Title : &nbsp;<span id="comment_title">Problem 1</span></p>
+                                <p>Feedback : </p>
+                                <textarea id="message" placeholder="This is a sample comment 1" rows="3" cols="50"></textarea>
+                                <br><br>
+                            </div>
+                            <button class="w3-button w3-block w3-dark-grey">Archive</button>
+                        </div>
+                    </div>
+                    <!-- End of Comment Box 1 -->
+                    <br>
+
+                    <!-- This is Comment Box 2 -->
+                    <div class="w3-container">
+                        <div class="w3-card-4" style="width:100%;">
+                            <header class="w3-container w3-light-grey">
+                                <h5>Application ID : &nbsp; <span id="app_id">E18CSE096</span></h5>
+                            </header>
+                            <br>
+                            <div class="w3-container">
+                                <p>Severity/Priority : &nbsp;<span id="severity">Medium</span></p>
+                                <p>Title : &nbsp;<span id="comment_title">Problem 2</span></p>
+                                <p>Feedback : </p>
+                                <textarea id="message" placeholder="This is a sample comment 2" rows="3" cols="50"></textarea>
+                                <br><br>
+                            </div>
+                            <button class="w3-button w3-block w3-dark-grey">Archive</button>
+                        </div>
+                    </div>
+                    <!-- End of Comment Box 2 -->
+                    <br>
+
+                    <!-- This is Comment Box 3 -->
+                    <div class="w3-container">
+                        <div class="w3-card-4" style="width:100%;">
+                            <header class="w3-container w3-light-grey">
+                                <h5>Application ID : &nbsp; <span id="app_id">E18CSE097</span></h5>
+                            </header>
+                            <br>
+                            <div class="w3-container">
+                                <p>Severity/Priority : &nbsp;<span id="severity">Low</span></p>
+                                <p>Title : &nbsp;<span id="comment_title">Problem 3</span></p>
+                                <p>Feedback : </p>
+                                <textarea id="message" placeholder="This is a sample comment 3" rows="3" cols="50"></textarea>
+                                <br><br>
+                            </div>
+                            <button class="w3-button w3-block w3-dark-grey">Archive</button>
+                        </div>
+                    </div>
+                    <!-- End of Comment Box 3 -->
+                    <br>     
+
+                </div>     
+            </div>
+        </div>
+    </body>
+</html>

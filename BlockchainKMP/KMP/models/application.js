@@ -4,7 +4,6 @@ const Schema = mongoose.Schema;
 const application = new Schema ({
         _id:String,
         applicant_name :   String,
-        applicant_id:String,
         full_address:  String,
         tel_no : String,
         email : String,
@@ -25,18 +24,17 @@ const application = new Schema ({
         number_of_taxiways : String,
         area_of_passenger_terminal : String,
         area_of_cargo_terminal : String,
-        name_of_directors : {type:Object, default:null},
-        ministry_defence : {type:Object, default:null},
-        ministry_home : {type:Object, default:null},
-        aerodrome_manual:{type:Object, default:null},
-        landowner_approval:{type:Object, default:null},
-        approval_AI : {type:String, default:"Pending"},
-        approval_DOAS : {type:String, default:"Pending"},
-        approval_DG : {type:String, default:"Pending"},
-        licenseIssued:{type:String, default:"Not Issued"},
-        comments:{type:[Object], default:null},
-        feeAmount:String,
-        licenseHash:{type:String, default:null}
+        name_of_directors : Object,
+        name_of_company : Object,
+        ministry_defence : Object,
+        ministry_home : Object,
+        aerodrome_manual:Object,
+        landowner_approval:Object,
+        approval_AI : String,
+        approval_DOAS : String,
+        approval_DG : String,
+        comments:Object,
+        feeAmount:String
 });
 
 module.exports = mongoose.model('Application', application)

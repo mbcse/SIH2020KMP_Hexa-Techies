@@ -1,0 +1,32 @@
+for dashboard-
+body {
+	background: linear-gradient(-45deg,#46f2c3,#66e3c1, #2bc299, #39dbaf, #48e0b7, #3ee6b8);
+	background-size: 400% 400%;
+	animation: gradient 10s ease infinite;
+}
+
+
+
+for table-
+
+body {
+	background: linear-gradient(-45deg,#fff1a8,#fff7cc#fff3b5, #f5ac93, #ffd1c2);
+	background-size: 400% 400%;
+	animation: gradient 10s ease infinite;
+}
+
+
+for table2-
+body {
+	background: linear-gradient(-45deg,#dbff9c,#cffc81,#ceff78, #f1ffa8,#d2ff82);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+for dashboard 2-
+body {
+	background: linear-gradient(-45deg,#ebff85,#e7ff6e, #f1ffa8, #e8fa89);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+(lemon yellow)
+

@@ -16,7 +16,7 @@
     <!-- Custom CSS -->
     <link href="/dashboard/dist/css/style.min.css" rel="stylesheet">
 
-
+   
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -30,44 +30,6 @@
 </head>
 
 <body>
-
-            	  <!-- Modal -->
-	  <div class="modal fade" id="applicationmodal" tabindex="-1" role="dialog" aria-labelledby="applicationmodal" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-		  <div class="modal-content">
-			<div class="modal-header">
-			  <h5 class="modal-title" id="applicationmodal">Notice</h5>
-			  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-			  </button>
-			</div>
-			<div class="modal-body">
-				<h5 id="message" >Uploading Approval</h5>
-				<div class="container" id="statusBar">
-					<h2 id="headingmessage">Submitting Approval Document</h2>
-					
-					<p id="proStatus">Starting</p> 
-					<div class="progress" style="height: 30px;">
-					  <div class="progress-bar progress-bar-striped progress-bar-animated" id="progressBar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%;height: 30px;">
-						<span id="barStatusValue">0%</span>
-					  </div>
-					</div>
-				  </div>
-			</div>
-			<div class="modal-footer">
-			  <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cancel" style="display: block;">Cancel</button>
-			  <button type="button" class="btn btn-secondary" data-dismiss="modal" style="display: block;" id="close">close</button>
-			  
-			</div>
-		  </div>
-		</div>
-	  </div>
-        <!-- Modal End -->
-
-
-
-
-
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
     <!-- ============================================================== -->
@@ -174,8 +136,8 @@
                                 <div class="user-pic"><img src="/dashboard/assets/images/users/1.jpg" alt="users" class="rounded-circle" width="40" /></div>
                                 <div class="user-content hide-menu m-l-10">
                                     <a href="javascript:void(0)" class="" id="Userdd" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <h5 class="m-b-0 user-name font-medium"><%=name%><i class="fa fa-angle-down"></i></h5>
-                                        <span class="op-5 user-email"><%=email%></span>
+                                        <h5 class="m-b-0 user-name font-medium">Mohit<i class="fa fa-angle-down"></i></h5>
+                                        <span class="op-5 user-email">mbcse@gmail.com</span>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="Userdd">
                                         <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
@@ -255,7 +217,6 @@
                                             <th class="border-top-0">Home Minister Approval</th>
                                             <th class="border-top-0">Defense Approval</th>
                                             <th class="border-top-0">Aerodrome Manual</th>
-                                            <th class="border-top-0">LandOwner Approval</th>
                                             <th class="border-top-0">A.I</th>
                                             <th class="border-top-0">D.O.A.S</th>
                                             <th class="border-top-0">D.G</th>
@@ -263,8 +224,42 @@
                                           
                                         </tr>
                                     </thead>
-                                    <tbody id="applicationTable">
-                                 
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <!-- <div class="m-r-10"><a class="btn btn-circle btn-info text-white">DL</a></div> -->
+                                                    <div class="">
+                                                        <h4 class="m-b-0 font-16">AAI897675</h4>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td><form enctype="multipart/form-data" action="/uploaddl" id="udl" method="post">
+                                              <input id="fileudl" type="file" name='fileudl' />
+                                              <input type="submit" value="Upload">
+                                              </form>
+                                           </td>
+                                           <td><form enctype="multipart/form-data" action="/uploaddl" id="udl" method="post">
+                                            <input id="fileudl" type="file" name='fileudl' />
+                                            <input type="submit" value="Upload">
+                                            </form>
+                                         </td>
+                                         <td><form enctype="multipart/form-data" action="/uploaddl" id="udl" method="post">
+                                          <input id="fileudl" type="file" name='fileudl' />
+                                          <input type="submit" value="Upload">
+                                          </form>
+                                       </td>
+                                            
+                                            <td id="udl_uploaded">Approved</td>
+                                            <td id="udl_verified">Approved</td>
+                                            <td id="udl_blockchain">
+                                                <label class="label label-danger">approved</label>
+                                            </td>
+                                            <td id="udl_validity">AAIhbdvb8723</td>
+                                         
+                                            
+                                        </tr>
                                         
                                     </tbody>
                                 </table>
@@ -290,7 +285,7 @@
                                 <div class="d-flex flex-row comment-row m-t-0">
                                     <div class="p-2"><img src="/dashboard/assets/images/users/1.jpg" alt="user" width="50" class="rounded-circle"></div>
                                     <div class="comment-text w-100">
-                                        <h6 class="font-medium">Dg</h6>
+                                        <h6 class="font-medium">James Anderson</h6>
                                         <span class="m-b-15 d-block">Lorem Ipsum is simply dummy text of the printing and type setting industry. </span>
                                         <div class="comment-footer">
                                             <span class="text-muted float-right">April 14, 2016</span> <span class="label label-rounded label-primary">Pending</span> <span class="action-icons">
@@ -305,7 +300,7 @@
                                 <div class="d-flex flex-row comment-row">
                                     <div class="p-2"><img src="/dashboard/assets/images/users/4.jpg" alt="user" width="50" class="rounded-circle"></div>
                                     <div class="comment-text active w-100">
-                                        <h6 class="font-medium">DOAS</h6>
+                                        <h6 class="font-medium">Michael Jorden</h6>
                                         <span class="m-b-15 d-block">Lorem Ipsum is simply dummy text of the printing and type setting industry. </span>
                                         <div class="comment-footer ">
                                             <span class="text-muted float-right">April 14, 2016</span>
@@ -322,7 +317,7 @@
                                 <div class="d-flex flex-row comment-row">
                                     <div class="p-2"><img src="/dashboard/assets/images/users/5.jpg" alt="user" width="50" class="rounded-circle"></div>
                                     <div class="comment-text w-100">
-                                        <h6 class="font-medium">AI</h6>
+                                        <h6 class="font-medium">Johnathan Doeting</h6>
                                         <span class="m-b-15 d-block">Lorem Ipsum is simply dummy text of the printing and type setting industry. </span>
                                         <div class="comment-footer">
                                             <span class="text-muted float-right">April 14, 2016</span>
@@ -382,249 +377,9 @@
     <script src="/dashboard/assets/libs/chartist/dist/chartist.min.js"></script>
     <script src="/dashboard/assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
     <script src="/dashboard/dist/js/pages/dashboards/dashboard1.js"></script>
-    <script>
-    function httpGetApplicationDetails(id,cb){
-        var xmlHttp = new XMLHttpRequest();
-        xmlHttp.open( "GET", '/client/getapplicationdetails/'+id, false ); // false for synchronous request
-        xmlHttp.send( null );
-        cb(JSON.parse(xmlHttp.responseText));
-    }
-    window.onload=()=>{
-        var user=<%- JSON.stringify(id) %>;
-        var userApplications=<%- JSON.stringify(userApplications) %>;
-        var applications=document.getElementById('applicationTable');
-        
-        for(var i=0;i<userApplications.length;i++){
-            console.log("working for"+i);
-            httpGetApplicationDetails(userApplications[i],(data)=>{
-                KMPcontract.methods.approvalStatus(data._id).call({from:userAccount},(err,status)=>{
-                var id=data._id;
-               
-                var df,hm,lo,am;
-                
 
-
-                if(data.ministry_defence && data.licenseIssued!=="Not Issued")
-                    df="<td> <span class='label label-success'> Uploaded </span> </td>";
-                
-                else if(data.ministry_defence)
-                    df=`<td> <span class='label label-success'> Uploaded </span> <form enctype="multipart/form-data" onsubmit="event.preventDefault();uploadDocs(this, '/client/uploaddfapproval/`+data._id+`','`+data._id+`')" id="uploadDF" method="post">
-                                    <input id="fileudl" type="file" name='filedf' />
-                                    <input type="submit" value="ReUpload">
-                                </form></td>`;
-                else
-                    df=`<td>
-                                <form enctype="multipart/form-data" onsubmit="event.preventDefault();uploadDocs(this, '/client/uploaddfapproval/`+data._id+`','`+data._id+`')" id="uploadDF" method="post">
-                                    <input id="fileudl" type="file" name='filedf' />
-                                    <input type="submit" value="Upload">
-                                </form>
-                        </td>`;
-
-
-                if(data.ministry_home && data.licenseIssued!=="Not Issued")
-                    hm="<td> <span class='label label-success'> Uploaded </span> </td>";  
-
-                else if(data.ministry_home )
-                    hm=`<td> <span class='label label-success'> Uploaded </span> <form enctype="multipart/form-data" onsubmit="event.preventDefault();uploadDocs(this, '/client/uploadhmapproval/`+data._id+`','`+data._id+`')"  id="uploadHM" method="post">
-                                    <input id="fileudl" type="file" name='filehm' />
-                                    <input type="submit" value="ReUpload">
-                                </form></td>`;
-                else
-                    hm=` <td>
-                                <form enctype="multipart/form-data" onsubmit="event.preventDefault();uploadDocs(this, '/client/uploadhmapproval/`+data._id+`','`+data._id+`')"  id="uploadHM" method="post">
-                                    <input id="fileudl" type="file" name='filehm' />
-                                    <input type="submit" value="Upload">
-                                </form>
-                            </td>`;
-
-
-                if(data.aerodrome_manual && data.licenseIssued!=="Not Issued")
-                    am="<td> <span class='label label-success'> Uploaded </span> </td>"; 
-                else if(data.aerodrome_manual)
-                    am=`<td> <span class='label label-success'> Uploaded </span>  <form enctype="multipart/form-data" onsubmit="event.preventDefault();uploadDocs(this, '/client/uploadam/`+data._id+`','`+data._id+`')" id="uploadAM" method="post">
-                                    <input id="fileudl" type="file" name='fileam' />
-                                    <input type="submit" value="ReUpload">
-                                </form> </td>`;
-                else  
-                    am= ` <td>
-                                <form enctype="multipart/form-data" onsubmit="event.preventDefault();uploadDocs(this, '/client/uploadam/`+data._id+`','`+data._id+`')" id="uploadAM" method="post">
-                                    <input id="fileudl" type="file" name='fileam' />
-                                    <input type="submit" value="Upload">
-                                </form>
-                            </td>`;
-
-                if(data.landowner_approval && data.licenseIssued!=="Not Issued")
-                    lo="<td> <span class='label label-success'> Uploaded </span> </td>"; 
-                else if(data.landowner_approval)
-                    lo=`<td> <span class='label label-success'> Uploaded </span>  <form enctype="multipart/form-data" onsubmit="event.preventDefault();uploadDocs(this, '/client/uploadloapproval/`+data._id+`','`+data._id+`')" id="uploadLO" method="post">
-                                    <input id="fileudl" type="file" name='filelo' />
-                                    <input type="submit" value="ReUpload">
-                                </form> </td>`; 
-                else
-                    lo=`  <td>
-                                <form enctype="multipart/form-data" onsubmit="event.preventDefault();uploadDocs(this, '/client/uploadloapproval/`+data._id+`','`+data._id+`')" id="uploadLO" method="post">
-                                    <input id="fileudl" type="file" name='filelo' />
-                                    <input type="submit" value="Upload">
-                                </form>
-                            </td>`;   
-                console.log(hm,df,lo,am);
-                applications.innerHTML+= ` <tr>
-                            <td>
-                                <div class="d-flex align-items-center">
-                                    <a class="m-b-0 font-16" href="/client/applicationdetails/`+data._id+`" id="applicationID">`+data._id+`</a>
-                                </div>
-                            </td>
-
-                            `+hm+df+am+lo+` 
-                            <td id="AIapproval">`+data.approval_AI+`</td>
-                            <td id="DOASapproval">`+data.approval_DOAS+`</td>
-                            <td id="DGapproval">
-                            <label class="label label-success">`+data.approval_DG+`</label>
-                            </td>
-                            <td id="Licenseno">`+data.licenseIssued+`</td>
-                             
-                    </tr>` 
-                });
-            });
-           
-        }
-
-        
-  
-        
-        
-                                        
-  
-        
-
-
-
-
-}
-
-function uploadDocs(th,url,id){
-$('#applicationmodal').modal('show');
-startUpload();
-   console.log(th);
-   var doctype=th.id;
-   let formData = new FormData();
-   formData.append("file",th.fileudl.files[0]);
-   console.log(formData);
-   $.ajax({
-        type: "POST",
-        processData: false,
-        contentType: false,
-        url: url,
-        data: formData, 
-        success: function(response){
-                if(response.status){
-                    statusValue=50;
-                    putStatusValue(statusValue,"Information Fetch Completed");	
-                    
-                    statusValue=52;
-		            putStatusValue(statusValue,"Sending IPFS Hash To Bockchain- Please Approve!");	
-                    console.log(response);
-                    if(doctype=="uploadHM")
-                        KMPcontract.methods.uploadHM(id,response.hash).send({from:userAccount},(err,tx)=>{
-                        statusValue=60;
-		                putStatusValue(statusValue,"Updating Blockchain...");	 
-                        }).on('receipt',(tx)=>{
-                        statusValue=100;
-		                putStatusValue(statusValue,"Successfully Uploaded");	});
-                    else if(doctype=="uploadDF")
-                        KMPcontract.methods.uploadDF(id,response.hash).send({from:userAccount},(err,tx)=>{
-                        statusValue=60;
-		                putStatusValue(statusValue,"Updating Blockchain...");	 
-                        }).on('receipt',(tx)=>{ 
-                        statusValue=100;
-		                putStatusValue(statusValue,"Successfully Uploaded");});
-                    else if(doctype=="uploadAM")
-                        KMPcontract.methods.uploadAM(id,response.hash).send({from:userAccount},(err,tx)=>{
-                        statusValue=60;
-		                putStatusValue(statusValue,"Updating Blockchain...");	     
-                        }).on('receipt',(tx)=>{ 
-                        statusValue=100;
-		                putStatusValue(statusValue,"Successfully Uploaded");});
-                    else   
-                        KMPcontract.methods.uploadLO(id,response.hash).send({from:userAccount},(err,tx)=>{
-                        statusValue=60;
-		                putStatusValue(statusValue,"Updating Blockchain...");	     
-                        }).on('receipt',(tx)=>{ 
-                        statusValue=100;
-		                putStatusValue(statusValue,"Successfully Uploaded");});
-
-                }
-                else{
-                    alert("Server Error");
-                    
-                }
-        }
-   });
-}     
-    </script>
 
  
-
-
-
-
-
-<script>
-	var messagediv=document.getElementById('message');
-	var barContainer=document.getElementById('statusBar');
-            barContainer.style.display="none";
-
-            var statusText=document.getElementById('proStatus');
-            var probarDiv=document.getElementById('progressBar');
-            var statusShowValue=document.getElementById('barStatusValue');
-            var statusValue=0;
-
-            var putStatusValue=function(val,text){
-                proStatus.innerHTML=text;
-                statusShowValue.innerHTML=val+"%";
-                probarDiv.style.width=val+"%";  
-            }
-            var progressInterval;
-
-            var updatebar=function(){
-                            if(statusValue>=0 && statusValue<5){
-                            putStatusValue(statusValue, "Connecting To Server");
-                            }
-                            else if(statusValue>=5 && statusValue <10){
-                                putStatusValue(statusValue, "Sending To IPFS");
-                            } 
-
-                            else if(statusValue>=10 && statusValue <50){
-                                putStatusValue(statusValue, "Fetching Information Through OCR");
-							}
-							else if(statusValue>=50 && statusValue <60){
-                                putStatusValue(statusValue, "Sending IPFS Hash To Bockchain- Please Approve!");
-                            }
-
-                            else if(statusValue>=60 && statusValue <=100){
-                                putStatusValue(statusValue,"Uploading...");
-                            }
-                            else{
-                                //putStatusValue(100,"Done! Thankyou For Subscribing!!");
-                                clearInterval(progressInterval);
-                            }
-
-                            statusValue++;
-
-            }
-
-            var startUpload=function(){
-					barContainer.style.display="block";   
-					messagediv.style.display="none";           
-                    progressInterval = setInterval(updatebar, 1500);
-                    
-                }
-
-
-
-
-        </script>
-
 
 </body>
 

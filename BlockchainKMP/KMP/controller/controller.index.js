@@ -6,17 +6,13 @@ login:(req,res,next)=>{
 
        var email=req.body.email;
        var password=req.body.password;
-       userdb.findOne({email:email, password:password},'category password id name',(err,user)=>{
+       userdb.findOne({email:email, password:password},'category password id',(err,user)=>{
             if(err) res.json({error:"Something Went Wrong"});
             if(user){
                 req.session.loggedin = true;
                 req.session.user =user._id;
                 req.session.access=user.category;
-                req.session.name=user.name;
-                if(user.category=="client")
-                    res.redirect('/'+user.category+'/dashboard');
-                else
-                    res.redirect('/admin/'+user.category+'/dashboard');
+                res.redirect('/'+user.category+'/dashboard');
 
             }
                 

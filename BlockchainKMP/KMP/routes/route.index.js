@@ -3,7 +3,7 @@ var router = express.Router();
 var indexController=require('../controller/controller.index');
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render("index");
+  res.send('This is Homepage Under Development');
 });
 
 router.get('/loginpage', function(req, res, next) {
@@ -20,7 +20,7 @@ router.post('/register',indexController.register);
 
 router.get('/logout', function(req, res, next) {
   req.session.destroy();
-  res.redirect('/loginpage');
+  res.redirect('/');
 });
 
 module.exports = router;

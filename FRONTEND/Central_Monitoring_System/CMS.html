@@ -1,0 +1,86 @@
+<html>
+    
+    <head>
+        <title>Central Monitoring System</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    </head>
+
+    <body class="w3-sand">
+        <br>
+        <h1 style="text-align: center;">Central Monitoring System</h1>
+        <br><hr><br>
+        
+        <div class="container cms_table">
+            <style>
+                .cms_table {
+                    overflow-x : auto;
+                    width : 100%;
+                    height : 60%;
+                }
+            </style>
+
+            <table class="table table-bordered table-hover w3-pale-yellow">
+                <thead>
+                    <tr>
+                        <th>Application ID</th>
+                        <th>Date</th>
+                        <th>Signatory</th>
+                        <th>Ethereum Address</th>
+                        <th>Action done</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    <!-- Sample data added. -->
+                    <tr>
+                        <td id="id"></td>
+                        <td id="date"></td>
+                        <td id="signatory"></td>
+                        <td id="eth_address"></td>
+                        <td id="action_done"></td>
+                    </tr>
+
+                    <tr>
+                        <td id="id"></td>
+                        <td id="date"></td>
+                        <td id="signatory"></td>
+                        <td id="eth_address"></td>
+                        <td id="action_done"></td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <br><hr><br>
+        <input type="button" class="btn btn-success" value="Go Back" onclick="history.back(-1)" />
+
+        <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script>    
+        if (typeof web3 !== 'undefined')
+            { 
+            web3 = new Web3(web3.currentProvider); 
+            }
+            else
+            {  
+            web3 = new Web3(new Web3.providers.HttpProvider("HTTP://127.0.0.1:7545")); 
+            }
+
+
+            
+
+        </script>
+            
+
+
+
+
+
+
+    </body>
+</html>

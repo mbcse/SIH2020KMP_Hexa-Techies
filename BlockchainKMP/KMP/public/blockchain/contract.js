@@ -25,79 +25,41 @@ var kmpABI=[
 				"type": "string"
 			},
 			{
+				"name": "_name",
+				"type": "string"
+			},
+			{
+				"name": "_Haddress",
+				"type": "string"
+			},
+			{
+				"name": "_telephone",
+				"type": "string"
+			},
+			{
+				"name": "_nationality",
+				"type": "string"
+			}
+		],
+		"name": "registerApplicant",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_id",
+				"type": "string"
+			},
+			{
 				"name": "_approverName",
 				"type": "string"
 			}
 		],
 		"name": "AIapprove",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_id",
-				"type": "string"
-			},
-			{
-				"name": "_approverName",
-				"type": "string"
-			}
-		],
-		"name": "DGapprove",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_id",
-				"type": "string"
-			},
-			{
-				"name": "_approverName",
-				"type": "string"
-			}
-		],
-		"name": "DOASapprove",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_addresss",
-				"type": "address"
-			}
-		],
-		"name": "grantAdminAccess",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_id",
-				"type": "string"
-			},
-			{
-				"name": "_license",
-				"type": "string"
-			}
-		],
-		"name": "grantLicense",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
@@ -145,239 +107,14 @@ var kmpABI=[
 		"constant": false,
 		"inputs": [
 			{
-				"name": "_id",
-				"type": "string"
-			},
-			{
-				"name": "_name",
-				"type": "string"
-			},
-			{
-				"name": "_Haddress",
-				"type": "string"
-			},
-			{
-				"name": "_telephone",
-				"type": "string"
-			},
-			{
-				"name": "_nationality",
-				"type": "string"
-			}
-		],
-		"name": "registerApplicant",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_id",
-				"type": "string"
-			}
-		],
-		"name": "rejectApplication",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_id",
-				"type": "string"
-			},
-			{
-				"name": "_hash",
-				"type": "string"
-			}
-		],
-		"name": "uploadAM",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_id",
-				"type": "string"
-			},
-			{
-				"name": "_hash",
-				"type": "string"
-			}
-		],
-		"name": "uploadDF",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_id",
-				"type": "string"
-			},
-			{
-				"name": "_hash",
-				"type": "string"
-			}
-		],
-		"name": "uploadHM",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_id",
-				"type": "string"
-			},
-			{
-				"name": "_hash",
-				"type": "string"
-			}
-		],
-		"name": "uploadLO",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "constructor"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"name": "applicationId",
-				"type": "string"
-			},
-			{
-				"indexed": false,
-				"name": "date",
-				"type": "uint256"
-			},
-			{
-				"indexed": false,
-				"name": "signatory",
-				"type": "string"
-			},
-			{
-				"indexed": false,
-				"name": "ethAddress",
+				"name": "_addresss",
 				"type": "address"
-			},
-			{
-				"indexed": false,
-				"name": "action",
-				"type": "string"
 			}
 		],
-		"name": "centralMonitoring",
-		"type": "event"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "_id",
-				"type": "string"
-			}
-		],
-		"name": "applicationStatus",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
+		"name": "grantAdminAccess",
+		"outputs": [],
 		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "_id",
-				"type": "string"
-			}
-		],
-		"name": "approvalStatus",
-		"outputs": [
-			{
-				"name": "DG",
-				"type": "bool"
-			},
-			{
-				"name": "DOAS",
-				"type": "bool"
-			},
-			{
-				"name": "AI",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "_id",
-				"type": "string"
-			}
-		],
-		"name": "getAerodromeDetails",
-		"outputs": [
-			{
-				"name": "aerodromeName",
-				"type": "string"
-			},
-			{
-				"name": "aerodromeOwner",
-				"type": "string"
-			},
-			{
-				"name": "latitude",
-				"type": "string"
-			},
-			{
-				"name": "longitude",
-				"type": "string"
-			},
-			{
-				"name": "district_state",
-				"type": "string"
-			},
-			{
-				"name": "category",
-				"type": "string"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -437,23 +174,58 @@ var kmpABI=[
 				"type": "string"
 			}
 		],
-		"name": "getApprovalDocs",
+		"name": "getAerodromeDetails",
 		"outputs": [
 			{
-				"name": "hm",
+				"name": "aerodromeName",
 				"type": "string"
 			},
 			{
-				"name": "df",
+				"name": "aerodromeOwner",
 				"type": "string"
 			},
 			{
-				"name": "lo",
+				"name": "latitude",
 				"type": "string"
 			},
 			{
-				"name": "am",
+				"name": "longitude",
 				"type": "string"
+			},
+			{
+				"name": "district_state",
+				"type": "string"
+			},
+			{
+				"name": "category",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_id",
+				"type": "string"
+			}
+		],
+		"name": "approvalStatus",
+		"outputs": [
+			{
+				"name": "DG",
+				"type": "bool"
+			},
+			{
+				"name": "DOAS",
+				"type": "bool"
+			},
+			{
+				"name": "AI",
+				"type": "bool"
 			}
 		],
 		"payable": false,
@@ -473,10 +245,70 @@ var kmpABI=[
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_id",
+				"type": "string"
+			},
+			{
+				"name": "_license",
+				"type": "string"
+			}
+		],
+		"name": "grantLicense",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_id",
+				"type": "string"
+			},
+			{
+				"name": "_approverName",
+				"type": "string"
+			}
+		],
+		"name": "DGapprove",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_id",
+				"type": "string"
+			},
+			{
+				"name": "_approverName",
+				"type": "string"
+			}
+		],
+		"name": "DOASapprove",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "constructor"
 	}
 ];
 
 
-var kmpADDRESS="0x6ce0d96684afbd80214b8708bcf10f967e2098eb";
+var kmpADDRESS="0xfad454c97b83b4f45b3eaedb60eec02fd1255cc9";
 
 var KMPcontract=new web3.eth.Contract(kmpABI,kmpADDRESS);

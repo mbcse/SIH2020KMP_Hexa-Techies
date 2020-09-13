@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Email Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    </head>
+
+    <body class="w3-sand">
+        <br>
+        <h1 style="text-align: center;"> Important Emails Received </h1>
+        <br><hr><br>
+
+        <div class="w3-container scroll">
+            <style>
+                .scroll {
+                    overflow-x: auto;
+                    width : 100%;
+                    height : 60%;
+                }
+            </style>
+
+            <div class="w3-card-4" style="width:100%;" style="align-self: center;">
+                <header class="w3-container w3-light-grey">
+                    <h4>Sent By : &nbsp;&nbsp; <span id="sender">vinstest@gmail.com</span></h4>
+                    <h4>Date : &nbsp;&nbsp; <span id="date">01-08-2020</span></h4>
+                </header>
+                <br>
+                <div class="w3-container">
+                    <h4><u>Subject : </u>&nbsp;&nbsp; <span id="subject">License Approval Aerodrome</span></h4>
+                    <h4>Body/Message : </h4>
+                    <textarea id="message" placeholder="The email is fetched based on the keywords like Aerodrome, Application Number, License Number, Project Name." rows="5" cols="160"></textarea>
+                    <br>
+                    <hr>
+
+                </div>
+                <button class="w3-button w3-block w3-dark-grey">Archive</button>
+            </div>           
+        </div>
+
+        <br><hr>
+        <input type="button" class="btn btn-success" value="Go Back" onclick="history.back(-1)" />
+    </body>
+</html>
