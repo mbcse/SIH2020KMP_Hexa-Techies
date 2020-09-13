@@ -37,5 +37,6 @@ important and relevant **Project related information from of pool of data source
 - Chahat Bindra and M.Vineeth=>Frontend
 
 
-**INITIAL WORK REPOSITORY LINK- https://github.com/mbcse/SIH2020**
+**DEPLOYMENT REPOSITORY LINK- https://github.com/mbcse/SIH2020**
+**Live Website Link: http://kmpsih.herokuapp.com/**
 
