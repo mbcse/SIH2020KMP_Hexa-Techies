@@ -36,3 +36,6 @@ important and relevant **Project related information from of pool of data source
 - Aditiya Singh and K.Manohar=>AI 
 - Chahat Bindra and M.Vineeth=>Frontend
 
+
+**INITIAL WORK REPOSITORY LINK- https://github.com/mbcse/SIH2020**
+
